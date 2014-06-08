@@ -36,6 +36,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self resetDistanceFlags];
+    [self resetWrongWayAlergFlags];
     if (self.isViewLoaded && !self.view.window) {
         KTAppDelegate *ktAppDelegate = (KTAppDelegate*)[[UIApplication sharedApplication]delegate];
         [[ktAppDelegate window] addSubview:self.view];
@@ -64,6 +65,12 @@
     _eightHundredFired = NO;
     _threeHundredFired = NO;
     _oneHundredFired = NO;
+}
+
+-(void)resetWrongWayAlergFlags{
+    _firstWrongWayAlert = NO;
+    _secondWrongWayAlert = NO;
+    _thirdWrongWayAlert = NO;
 }
 
 -(void)setUpViewForUserChoosingAStopAnnotation{
@@ -219,18 +226,27 @@
             CLLocation *wrongStopLoc = [[CLLocation alloc]initWithLatitude:[stop.latitude doubleValue] longitude:[stop.longitude doubleValue]];
             NSInteger distanceFromWrongStop = [location distanceFromLocation:wrongStopLoc];
             if (distanceFromWrongStop < 50) {
-                static dispatch_once_t onceToken;
-                dispatch_once(&onceToken, ^{
-                    [KTNotifyStop _sendWrongWayAlert];
-                });
-                static dispatch_once_t secondToken;
-                dispatch_once(&secondToken, ^{
-                    [KTNotifyStop _sendWrongWayAlert];
-                });
-                static dispatch_once_t thirdToken;
-                dispatch_once(&thirdToken, ^{
-                    [KTNotifyStop _sendWrongWayAlert];
-                });
+                if (_firstWrongWayAlert == NO) {
+                    static dispatch_once_t onceToken;
+                    dispatch_once(&onceToken, ^{
+                        [KTNotifyStop _sendWrongWayAlert];
+                        _firstWrongWayAlert = YES;
+                    });
+                }
+                if (_secondWrongWayAlert == NO) {
+                    static dispatch_once_t secondToken;
+                    dispatch_once(&secondToken, ^{
+                        [KTNotifyStop _sendWrongWayAlert];
+                        _secondWrongWayAlert = YES;
+                    });
+                }
+                if (_thirdWrongWayAlert == NO) {
+                    static dispatch_once_t thirdToken;
+                    dispatch_once(&thirdToken, ^{
+                        [KTNotifyStop _sendWrongWayAlert];
+                        _thirdWrongWayAlert = YES;
+                    });
+                }
             }
         }
     }
@@ -242,6 +258,7 @@
         [locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
         [self.tripMonitor checkClosestActiveStopToLocation:location withTripSessionStops:tripSessionStops];
         _eightHundredFired = YES;
+        _wrongWayPossibleFlag = NO;
     }
     if (distanceFromDest < 350 && _threeHundredFired == NO) {
         [[UIApplication sharedApplication]cancelAllLocalNotifications];
@@ -376,7 +393,7 @@
             [self initStopRegions];
         }
     }];
-    _stopsInWrongDirection = [NSArray arrayWithArray:[self.tripMonitor findFirstThreeStopsIntheWrongDirectionGivenCurrentLocation:self.currentLocation andFinalStop:self.selectedStop]];
+    _stopsInWrongDirection = [NSArray arrayWithArray:[self.tripMonitor findStopsIntheWrongDirectionGivenCurrentLocation:self.currentLocation andFinalStop:self.selectedStop]];
     if ([_stopsInWrongDirection count] < 1) {
         _wrongWayPossibleFlag = NO;
     }else {
@@ -411,6 +428,7 @@
 
 -(void)chooseAnotherStop{
     [self resetDistanceFlags];
+    [self resetWrongWayAlergFlags];
     _stopsInWrongDirection = nil;
     if (self.tripMonitoringActive == YES) {
         [locationManager stopUpdatingLocation];
@@ -474,12 +492,10 @@
 }
 
 -(void)trackFavoriteStop:(NSString*)stopID route:(NSString*)route{
-    // 0 zoom map in on stop location
     CLLocationCoordinate2D favoriteStopCoord = CLLocationCoordinate2DMake([self.selectedStop.latitude floatValue], [self.selectedStop.longitude floatValue]);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(favoriteStopCoord, 1.1*METERS_PER_MILE, 1.1*METERS_PER_MILE);
     [self.map setRegion:region animated:YES];
     [self.map setDelegate:self];
-    // set up the chosen stop view with a slower timer
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self finalDestinationStopChosen:self.selectedStop.stopID stopName:self.selectedStop.stopName direction:self.selectedStop.direction route:self.selectedStop.route sequence:self.selectedStop.sequence];
         [self layStopsForRoute];
@@ -524,6 +540,7 @@
 
 -(void)restart{
     [self resetDistanceFlags];
+    [self resetWrongWayAlergFlags];
     [locationManager stopUpdatingLocation];
     UINavigationController *nav = [[self storyboard]instantiateViewControllerWithIdentifier:@"navController"];
     [self presentViewController:nav animated:YES completion:nil];

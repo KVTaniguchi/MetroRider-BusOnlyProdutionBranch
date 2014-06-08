@@ -55,6 +55,9 @@
 @property (nonatomic) BOOL threeHundredFired;
 @property (nonatomic) BOOL oneHundredFired;
 @property (nonatomic) BOOL wrongWayPossibleFlag;
+@property (nonatomic) BOOL firstWrongWayAlert;
+@property (nonatomic) BOOL secondWrongWayAlert;
+@property (nonatomic) BOOL thirdWrongWayAlert;
 @property (nonatomic,strong) TripMonitor *tripMonitor;
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (strong, nonatomic) IBOutlet UILabel *routeLabel;

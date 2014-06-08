@@ -55,5 +55,5 @@ typedef void(^myCompletion)(BOOL);
 -(NSArray*)getCloseActiveTripStopsForRoute:(NSString*)route withLocation:(CLLocation*)userLoc;
 //-(NSArray*)findLastThreeActiveStopsToDestination:(Stop*)finalStop GivenCurrentLocation:(CLLocation*)currentLocation;
 -(void)findLastThreeActiveStopsToDestination:(Stop*)finalStop GivenCurrentLocation:(CLLocation*)currentLocation :(myCompletion)compBlock;
--(NSArray*)findFirstThreeStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop;
+-(NSArray*)findStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop;
 @end

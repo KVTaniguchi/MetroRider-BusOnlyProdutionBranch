@@ -123,24 +123,16 @@
     return closestActiveStop;
 }
 
--(NSArray*)findFirstThreeStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop{
+-(NSArray*)findStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop{
     NSArray *allStopsOnDestRoute = [[KTRouteStopStore sharedStore]fetchStopsForRoute:finalStop.route andDirection:finalStop.direction];
     int min = 1000;
-    NSString *stopName = [NSString new];
     NSString *closestSeq = [NSString new];
-    NSString *closestStopID = [NSString new];
-    NSString *closestDir = [NSString new];
-    NSString *closestRoute = [NSString new];
     for (Stop *stop in allStopsOnDestRoute) {
         CLLocation *stopLoc = [[CLLocation alloc]initWithLatitude:[stop.latitude doubleValue] longitude:[stop.longitude doubleValue]];
         CLLocationDistance distance = [currentLocation distanceFromLocation:stopLoc];
         if (distance < min) {
             min = distance;
-            stopName = stop.stopName;
             closestSeq = [NSString stringWithFormat:@"%@", stop.sequence];
-            closestDir = stop.direction;
-            closestStopID = stop.stopID;
-            closestRoute = stop.route;
         }
     }
     if([closestSeq intValue] < 1){
@@ -162,8 +154,6 @@
 }
 
 -(void)findLastThreeActiveStopsToDestination:(Stop*)finalStop GivenCurrentLocation:(CLLocation*)currentLocation :(myCompletion) compBlock{
-    // the final stop does not have the same sequence number as the allStopsOnDestRoute final stop
-    // match up the final stop to the one in the sequence or call up the correct final stop
     NSArray *allStopsOnDestRoute = [[KTRouteStopStore sharedStore]fetchStopsForRoute:finalStop.route andDirection:finalStop.direction];
     NSMutableArray *activeStops = [NSMutableArray new];
     NSNumber *index;
