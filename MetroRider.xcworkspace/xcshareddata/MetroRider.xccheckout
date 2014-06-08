@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>82C9BDE0-7076-45CD-B720-142C75ABF997</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MetroRider</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</key>
+		<string>https://github.com/KVTaniguchi/MetroRider-BusOnlyEnhanced.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MetroRider.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/KVTaniguchi/MetroRider-BusOnlyEnhanced.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MetroRider-BusOnlyProdutionBranch</string>
+		</dict>
+	</array>
+</dict>
+</plist>

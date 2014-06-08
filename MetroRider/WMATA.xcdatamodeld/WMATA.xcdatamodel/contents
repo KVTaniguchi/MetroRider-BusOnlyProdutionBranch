@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C64" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bus" syncable="YES">
+        <attribute name="routeID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopsWithCoords" optional="YES" attributeType="Transformable" syncable="YES"/>
+    </entity>
+    <entity name="Train" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="UserLocation" syncable="YES">
+        <attribute name="xCoord" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="yCoord" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="UserLocation" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Bus" positionX="-54" positionY="9" width="128" height="73"/>
+        <element name="Train" positionX="-36" positionY="18" width="128" height="58"/>
+    </elements>
+</model>

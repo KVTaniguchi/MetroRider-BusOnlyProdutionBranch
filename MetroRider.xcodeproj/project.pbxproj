@@ -1,0 +1,1046 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		848AEC0E2D42465FA84B2908 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58CB296BFC23482D8F95B087 /* libPods.a */; };
+		C70B3A4118F4BD59008D3DA2 /* KTDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A4018F4BD59008D3DA2 /* KTDataLoader.m */; };
+		C70B3A4618F7957B008D3DA2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70B3A4518F7957B008D3DA2 /* MapKit.framework */; };
+		C70B3A4918FC60EA008D3DA2 /* WMATAData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A4718FC60EA008D3DA2 /* WMATAData.xcdatamodeld */; };
+		C70B3A5218FC9818008D3DA2 /* RideSelectCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A5118FC9818008D3DA2 /* RideSelectCVC.m */; };
+		C70B3A5918FCAE61008D3DA2 /* RideSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A5818FCAE61008D3DA2 /* RideSelectCell.m */; };
+		C70B3A5C18FCB033008D3DA2 /* KTRouteMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A5B18FCB033008D3DA2 /* KTRouteMapVC.m */; };
+		C70B3A5F18FCBA6C008D3DA2 /* TripMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A5E18FCBA6C008D3DA2 /* TripMonitor.m */; };
+		C70C0DE1191D7A45003FF3B8 /* KTMapSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C70C0DE0191D7A45003FF3B8 /* KTMapSearchVC.m */; };
+		C70C0DE8191D7CC4003FF3B8 /* KTSearchTBLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C70C0DE7191D7CC4003FF3B8 /* KTSearchTBLVC.m */; };
+		C742B2CF18FED343003EFF05 /* KTActiveTripStop.m in Sources */ = {isa = PBXBuildFile; fileRef = C742B2CE18FED343003EFF05 /* KTActiveTripStop.m */; };
+		C74355E61930536900015DEB /* launchIMAGE.png in Resources */ = {isa = PBXBuildFile; fileRef = C74355E51930536900015DEB /* launchIMAGE.png */; };
+		C74B035D192EAAE9008A6798 /* your_stop_fresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B035C192EAAE9008A6798 /* your_stop_fresh.png */; };
+		C74B0372192EAC82008A6798 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0362192EAC82008A6798 /* Icon-40.png */; };
+		C74B0373192EAC82008A6798 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0363192EAC82008A6798 /* Icon-40@2x.png */; };
+		C74B0374192EAC82008A6798 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0364192EAC82008A6798 /* Icon-60.png */; };
+		C74B0375192EAC82008A6798 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0365192EAC82008A6798 /* Icon-60@2x.png */; };
+		C74B0376192EAC82008A6798 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0366192EAC82008A6798 /* Icon-72.png */; };
+		C74B0377192EAC82008A6798 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0367192EAC82008A6798 /* Icon-72@2x.png */; };
+		C74B0378192EAC82008A6798 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0368192EAC82008A6798 /* Icon-76.png */; };
+		C74B0379192EAC82008A6798 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0369192EAC82008A6798 /* Icon-76@2x.png */; };
+		C74B037A192EAC82008A6798 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B036A192EAC82008A6798 /* Icon-Small-50.png */; };
+		C74B037B192EAC82008A6798 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B036B192EAC82008A6798 /* Icon-Small-50@2x.png */; };
+		C74B037C192EAC82008A6798 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B036C192EAC82008A6798 /* Icon-Small.png */; };
+		C74B037D192EAC82008A6798 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B036D192EAC82008A6798 /* Icon-Small@2x.png */; };
+		C74B037E192EAC82008A6798 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B036E192EAC82008A6798 /* Icon.png */; };
+		C74B037F192EAC82008A6798 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B036F192EAC82008A6798 /* Icon@2x.png */; };
+		C74B0380192EAC82008A6798 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0370192EAC82008A6798 /* iTunesArtwork.png */; };
+		C74B0381192EAC82008A6798 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0371192EAC82008A6798 /* iTunesArtwork@2x.png */; };
+		C74B0383192EEA74008A6798 /* reload-75.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B0382192EEA74008A6798 /* reload-75.png */; };
+		C74F93EB18FCDEBE00079892 /* KTNotifyStop.m in Sources */ = {isa = PBXBuildFile; fileRef = C74F93EA18FCDEBE00079892 /* KTNotifyStop.m */; };
+		C74F942F18FCE5AC00079892 /* KTRouteStopStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C74F942E18FCE5AC00079892 /* KTRouteStopStore.m */; };
+		C75DAECF190D684800BC8774 /* ChosenStopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C75DAECE190D684800BC8774 /* ChosenStopVC.m */; };
+		C75E2EC1190B6AFE005E85B9 /* KTAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75E2EC0190B6AFE005E85B9 /* KTAnnotationView.m */; };
+		C75E2ECC190C4CFE005E85B9 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E2ECB190C4CFE005E85B9 /* check.png */; };
+		C75E2ED6190C5522005E85B9 /* star-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C75E2ED5190C5522005E85B9 /* star-50.png */; };
+		C75E2EDD190C6165005E85B9 /* StopInfoCallOutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C75E2EDC190C6165005E85B9 /* StopInfoCallOutVC.m */; };
+		C7613CEB1908825D00C4449F /* 193-location-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CEA1908825D00C4449F /* 193-location-arrow.png */; };
+		C7613CED1908833C00C4449F /* left-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CEC1908833C00C4449F /* left-50.png */; };
+		C7613CF01908884B00C4449F /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7613CEF1908884B00C4449F /* MRCircularProgressView.m */; };
+		C7613CFE190B070300C4449F /* Map-Marker-Marker-Inside-Chartreuse.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CF8190B070300C4449F /* Map-Marker-Marker-Inside-Chartreuse.png */; };
+		C7613CFF190B070300C4449F /* MapMarker_Marker_Inside_Azure.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CF9190B070300C4449F /* MapMarker_Marker_Inside_Azure.png */; };
+		C7613D00190B070300C4449F /* Map-Marker-Marker-Inside-Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CFA190B070300C4449F /* Map-Marker-Marker-Inside-Pink.png */; };
+		C7613D01190B070300C4449F /* MapMarker_Marker_Outside_Azure.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CFB190B070300C4449F /* MapMarker_Marker_Outside_Azure.png */; };
+		C7613D02190B070300C4449F /* MapMarker_Marker_Outside_Pink.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CFC190B070300C4449F /* MapMarker_Marker_Outside_Pink.png */; };
+		C7613D03190B070300C4449F /* MapMarker_Marker_Outside_Chartreuse.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613CFD190B070300C4449F /* MapMarker_Marker_Outside_Chartreuse.png */; };
+		C7613D05190B584D00C4449F /* bus-32.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613D04190B584D00C4449F /* bus-32.png */; };
+		C7613D07190B585D00C4449F /* train-32.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613D06190B585D00C4449F /* train-32.png */; };
+		C7613D09190B5A0800C4449F /* 06-magnify.png in Resources */ = {isa = PBXBuildFile; fileRef = C7613D08190B5A0800C4449F /* 06-magnify.png */; };
+		C76299941921A69100B5EC26 /* station_uuids.txt in Resources */ = {isa = PBXBuildFile; fileRef = C76299931921A69100B5EC26 /* station_uuids.txt */; };
+		C762999B1921ACDB00B5EC26 /* Stations.plist in Resources */ = {isa = PBXBuildFile; fileRef = C762999A1921ACDB00B5EC26 /* Stations.plist */; };
+		C78B816C190F095600CC2E60 /* FavoriteCallOutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C78B816B190F095600CC2E60 /* FavoriteCallOutVC.m */; };
+		C790F37E190241FA00AE6C2E /* KTChooseStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C790F37D190241FA00AE6C2E /* KTChooseStopButton.m */; };
+		C790F384190243D600AE6C2E /* KTAnnotationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = C790F383190243D600AE6C2E /* KTAnnotationPoint.m */; };
+		C791F7A0191673D400E3DB2F /* LeftToRightSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = C791F79F191673D400E3DB2F /* LeftToRightSegue.m */; };
+		C791F7A41916819400E3DB2F /* leftVectorArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C791F7A31916819400E3DB2F /* leftVectorArrow.png */; };
+		C791F7A719185BA100E3DB2F /* KTFavoritesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C791F7A619185BA100E3DB2F /* KTFavoritesVC.m */; };
+		C791F7A91919B1CE00E3DB2F /* FavoriteTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C791F7A81919B1CE00E3DB2F /* FavoriteTBCell.xib */; };
+		C792166C191DC9F20000CFAB /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = C792166B191DC9F20000CFAB /* Route.m */; };
+		C792166F191DC9F30000CFAB /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = C792166E191DC9F30000CFAB /* Stop.m */; };
+		C7921672191DC9F30000CFAB /* UserLoc.m in Sources */ = {isa = PBXBuildFile; fileRef = C7921671191DC9F30000CFAB /* UserLoc.m */; };
+		C7921675191DC9F30000CFAB /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = C7921674191DC9F30000CFAB /* Station.m */; };
+		C795766B18F391E2003D2D83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766A18F391E2003D2D83 /* Foundation.framework */; };
+		C795766D18F391E2003D2D83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766C18F391E2003D2D83 /* CoreGraphics.framework */; };
+		C795766F18F391E2003D2D83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766E18F391E2003D2D83 /* UIKit.framework */; };
+		C795767518F391E2003D2D83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C795767318F391E2003D2D83 /* InfoPlist.strings */; };
+		C795767718F391E2003D2D83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C795767618F391E2003D2D83 /* main.m */; };
+		C795767B18F391E2003D2D83 /* KTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C795767A18F391E2003D2D83 /* KTAppDelegate.m */; };
+		C795767E18F391E2003D2D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C795767C18F391E2003D2D83 /* Main.storyboard */; };
+		C795768118F391E2003D2D83 /* KTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C795768018F391E2003D2D83 /* KTViewController.m */; };
+		C795768318F391E2003D2D83 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C795768218F391E2003D2D83 /* Images.xcassets */; };
+		C795768A18F391E2003D2D83 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795768918F391E2003D2D83 /* XCTest.framework */; };
+		C795768B18F391E2003D2D83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766A18F391E2003D2D83 /* Foundation.framework */; };
+		C795768C18F391E2003D2D83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766E18F391E2003D2D83 /* UIKit.framework */; };
+		C795769418F391E2003D2D83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C795769218F391E2003D2D83 /* InfoPlist.strings */; };
+		C795769618F391E2003D2D83 /* MetroRiderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C795769518F391E2003D2D83 /* MetroRiderTests.m */; };
+		C79576A018F39417003D2D83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795769F18F39417003D2D83 /* CoreLocation.framework */; };
+		C79576A218F394A6003D2D83 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79576A118F394A6003D2D83 /* CoreData.framework */; };
+		C79BF2FF191EA5EB00B821B0 /* KTSearchTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C79BF2FD191EA5EB00B821B0 /* KTSearchTBCell.m */; };
+		C79BF300191EA5EB00B821B0 /* KTSearchTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C79BF2FE191EA5EB00B821B0 /* KTSearchTBCell.xib */; };
+		C7BD5DE01910AF7A00E4E522 /* FavoriteTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */; };
+		C7BD5DE31910AFC200E4E522 /* FavoriteTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5DE21910AFC200E4E522 /* FavoriteTBCell.m */; };
+		C7D296DD19245C7100597B2B /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D296DC19245C7100597B2B /* Refresh.png */; };
+		C7D296E21925783500597B2B /* Refresh80.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D296E11925783500597B2B /* Refresh80.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C795768D18F391E2003D2D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C795765F18F391E2003D2D83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C795766618F391E2003D2D83;
+			remoteInfo = MetroRider;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58CB296BFC23482D8F95B087 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C70B3A3F18F4BD59008D3DA2 /* KTDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDataLoader.h; sourceTree = "<group>"; };
+		C70B3A4018F4BD59008D3DA2 /* KTDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDataLoader.m; sourceTree = "<group>"; };
+		C70B3A4518F7957B008D3DA2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C70B3A4818FC60EA008D3DA2 /* WMATAData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WMATAData.xcdatamodel; sourceTree = "<group>"; };
+		C70B3A5018FC9818008D3DA2 /* RideSelectCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideSelectCVC.h; sourceTree = "<group>"; };
+		C70B3A5118FC9818008D3DA2 /* RideSelectCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideSelectCVC.m; sourceTree = "<group>"; };
+		C70B3A5718FCAE61008D3DA2 /* RideSelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RideSelectCell.h; sourceTree = "<group>"; };
+		C70B3A5818FCAE61008D3DA2 /* RideSelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RideSelectCell.m; sourceTree = "<group>"; };
+		C70B3A5A18FCB033008D3DA2 /* KTRouteMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRouteMapVC.h; sourceTree = "<group>"; };
+		C70B3A5B18FCB033008D3DA2 /* KTRouteMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRouteMapVC.m; sourceTree = "<group>"; };
+		C70B3A5D18FCBA6C008D3DA2 /* TripMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TripMonitor.h; sourceTree = "<group>"; };
+		C70B3A5E18FCBA6C008D3DA2 /* TripMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TripMonitor.m; sourceTree = "<group>"; };
+		C70C0D91191B2C48003FF3B8 /* WMATAData 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 7.xcdatamodel"; sourceTree = "<group>"; };
+		C70C0DDF191D7A45003FF3B8 /* KTMapSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMapSearchVC.h; sourceTree = "<group>"; };
+		C70C0DE0191D7A45003FF3B8 /* KTMapSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMapSearchVC.m; sourceTree = "<group>"; };
+		C70C0DE6191D7CC4003FF3B8 /* KTSearchTBLVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSearchTBLVC.h; sourceTree = "<group>"; };
+		C70C0DE7191D7CC4003FF3B8 /* KTSearchTBLVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSearchTBLVC.m; sourceTree = "<group>"; };
+		C742B2CD18FED343003EFF05 /* KTActiveTripStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTActiveTripStop.h; sourceTree = "<group>"; };
+		C742B2CE18FED343003EFF05 /* KTActiveTripStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTActiveTripStop.m; sourceTree = "<group>"; };
+		C74355E51930536900015DEB /* launchIMAGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchIMAGE.png; sourceTree = "<group>"; };
+		C74B035B192EA666008A6798 /* your stop master.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "your stop master.psd"; sourceTree = "<group>"; };
+		C74B035C192EAAE9008A6798 /* your_stop_fresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = your_stop_fresh.png; sourceTree = "<group>"; };
+		C74B0362192EAC82008A6798 /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
+		C74B0363192EAC82008A6798 /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		C74B0364192EAC82008A6798 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
+		C74B0365192EAC82008A6798 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		C74B0366192EAC82008A6798 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		C74B0367192EAC82008A6798 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		C74B0368192EAC82008A6798 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
+		C74B0369192EAC82008A6798 /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
+		C74B036A192EAC82008A6798 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		C74B036B192EAC82008A6798 /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		C74B036C192EAC82008A6798 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		C74B036D192EAC82008A6798 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		C74B036E192EAC82008A6798 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C74B036F192EAC82008A6798 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C74B0370192EAC82008A6798 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		C74B0371192EAC82008A6798 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		C74B0382192EEA74008A6798 /* reload-75.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reload-75.png"; sourceTree = "<group>"; };
+		C74F93E918FCDEBE00079892 /* KTNotifyStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTNotifyStop.h; sourceTree = "<group>"; };
+		C74F93EA18FCDEBE00079892 /* KTNotifyStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTNotifyStop.m; sourceTree = "<group>"; };
+		C74F942D18FCE5AC00079892 /* KTRouteStopStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTRouteStopStore.h; sourceTree = "<group>"; };
+		C74F942E18FCE5AC00079892 /* KTRouteStopStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTRouteStopStore.m; sourceTree = "<group>"; };
+		C74F943018FD058E00079892 /* WMATAData 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 2.xcdatamodel"; sourceTree = "<group>"; };
+		C74F943718FD0F4500079892 /* WMATAData 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 3.xcdatamodel"; sourceTree = "<group>"; };
+		C74F943E18FD100700079892 /* WMATAData 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 4.xcdatamodel"; sourceTree = "<group>"; };
+		C74F944518FD10CB00079892 /* WMATAData 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 5.xcdatamodel"; sourceTree = "<group>"; };
+		C75DAECD190D684800BC8774 /* ChosenStopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChosenStopVC.h; sourceTree = "<group>"; };
+		C75DAECE190D684800BC8774 /* ChosenStopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChosenStopVC.m; sourceTree = "<group>"; };
+		C75E2EBF190B6AFE005E85B9 /* KTAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAnnotationView.h; sourceTree = "<group>"; };
+		C75E2EC0190B6AFE005E85B9 /* KTAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAnnotationView.m; sourceTree = "<group>"; };
+		C75E2ECB190C4CFE005E85B9 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		C75E2ED5190C5522005E85B9 /* star-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-50.png"; sourceTree = "<group>"; };
+		C75E2EDB190C6165005E85B9 /* StopInfoCallOutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopInfoCallOutVC.h; sourceTree = "<group>"; };
+		C75E2EDC190C6165005E85B9 /* StopInfoCallOutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopInfoCallOutVC.m; sourceTree = "<group>"; };
+		C7613CEA1908825D00C4449F /* 193-location-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "193-location-arrow.png"; sourceTree = "<group>"; };
+		C7613CEC1908833C00C4449F /* left-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-50.png"; sourceTree = "<group>"; };
+		C7613CEE1908884B00C4449F /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
+		C7613CEF1908884B00C4449F /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
+		C7613CF8190B070300C4449F /* Map-Marker-Marker-Inside-Chartreuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map-Marker-Marker-Inside-Chartreuse.png"; sourceTree = "<group>"; };
+		C7613CF9190B070300C4449F /* MapMarker_Marker_Inside_Azure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapMarker_Marker_Inside_Azure.png; sourceTree = "<group>"; };
+		C7613CFA190B070300C4449F /* Map-Marker-Marker-Inside-Pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Map-Marker-Marker-Inside-Pink.png"; sourceTree = "<group>"; };
+		C7613CFB190B070300C4449F /* MapMarker_Marker_Outside_Azure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapMarker_Marker_Outside_Azure.png; sourceTree = "<group>"; };
+		C7613CFC190B070300C4449F /* MapMarker_Marker_Outside_Pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapMarker_Marker_Outside_Pink.png; sourceTree = "<group>"; };
+		C7613CFD190B070300C4449F /* MapMarker_Marker_Outside_Chartreuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapMarker_Marker_Outside_Chartreuse.png; sourceTree = "<group>"; };
+		C7613D04190B584D00C4449F /* bus-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bus-32.png"; sourceTree = "<group>"; };
+		C7613D06190B585D00C4449F /* train-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "train-32.png"; sourceTree = "<group>"; };
+		C7613D08190B5A0800C4449F /* 06-magnify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "06-magnify.png"; sourceTree = "<group>"; };
+		C76299931921A69100B5EC26 /* station_uuids.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = station_uuids.txt; sourceTree = "<group>"; };
+		C762999A1921ACDB00B5EC26 /* Stations.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Stations.plist; sourceTree = "<group>"; };
+		C78B8169190DDFF500CC2E60 /* WMATAData 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 6.xcdatamodel"; sourceTree = "<group>"; };
+		C78B816A190F095600CC2E60 /* FavoriteCallOutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteCallOutVC.h; sourceTree = "<group>"; };
+		C78B816B190F095600CC2E60 /* FavoriteCallOutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteCallOutVC.m; sourceTree = "<group>"; };
+		C790F37C190241FA00AE6C2E /* KTChooseStopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTChooseStopButton.h; sourceTree = "<group>"; };
+		C790F37D190241FA00AE6C2E /* KTChooseStopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTChooseStopButton.m; sourceTree = "<group>"; };
+		C790F382190243D600AE6C2E /* KTAnnotationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAnnotationPoint.h; sourceTree = "<group>"; };
+		C790F383190243D600AE6C2E /* KTAnnotationPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAnnotationPoint.m; sourceTree = "<group>"; };
+		C791F79E191673D400E3DB2F /* LeftToRightSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftToRightSegue.h; sourceTree = "<group>"; };
+		C791F79F191673D400E3DB2F /* LeftToRightSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftToRightSegue.m; sourceTree = "<group>"; };
+		C791F7A31916819400E3DB2F /* leftVectorArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftVectorArrow.png; sourceTree = "<group>"; };
+		C791F7A519185BA100E3DB2F /* KTFavoritesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTFavoritesVC.h; sourceTree = "<group>"; };
+		C791F7A619185BA100E3DB2F /* KTFavoritesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTFavoritesVC.m; sourceTree = "<group>"; };
+		C791F7A81919B1CE00E3DB2F /* FavoriteTBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavoriteTBCell.xib; sourceTree = "<group>"; };
+		C7921669191DC9CB0000CFAB /* WMATAData 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WMATAData 8.xcdatamodel"; sourceTree = "<group>"; };
+		C792166A191DC9F20000CFAB /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		C792166B191DC9F20000CFAB /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		C792166D191DC9F30000CFAB /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; };
+		C792166E191DC9F30000CFAB /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
+		C7921670191DC9F30000CFAB /* UserLoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoc.h; sourceTree = "<group>"; };
+		C7921671191DC9F30000CFAB /* UserLoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoc.m; sourceTree = "<group>"; };
+		C7921673191DC9F30000CFAB /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		C7921674191DC9F30000CFAB /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		C795766718F391E2003D2D83 /* MetroRider.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetroRider.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C795766A18F391E2003D2D83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C795766C18F391E2003D2D83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C795766E18F391E2003D2D83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C795767218F391E2003D2D83 /* MetroRider-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetroRider-Info.plist"; sourceTree = "<group>"; };
+		C795767418F391E2003D2D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C795767618F391E2003D2D83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C795767818F391E2003D2D83 /* MetroRider-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetroRider-Prefix.pch"; sourceTree = "<group>"; };
+		C795767918F391E2003D2D83 /* KTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTAppDelegate.h; sourceTree = "<group>"; };
+		C795767A18F391E2003D2D83 /* KTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTAppDelegate.m; sourceTree = "<group>"; };
+		C795767D18F391E2003D2D83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C795767F18F391E2003D2D83 /* KTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTViewController.h; sourceTree = "<group>"; };
+		C795768018F391E2003D2D83 /* KTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTViewController.m; sourceTree = "<group>"; };
+		C795768218F391E2003D2D83 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C795768818F391E2003D2D83 /* MetroRiderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetroRiderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C795768918F391E2003D2D83 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C795769118F391E2003D2D83 /* MetroRiderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetroRiderTests-Info.plist"; sourceTree = "<group>"; };
+		C795769318F391E2003D2D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C795769518F391E2003D2D83 /* MetroRiderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetroRiderTests.m; sourceTree = "<group>"; };
+		C795769F18F39417003D2D83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C79576A118F394A6003D2D83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C79BF2FC191EA5EB00B821B0 /* KTSearchTBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSearchTBCell.h; sourceTree = "<group>"; };
+		C79BF2FD191EA5EB00B821B0 /* KTSearchTBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSearchTBCell.m; sourceTree = "<group>"; };
+		C79BF2FE191EA5EB00B821B0 /* KTSearchTBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTSearchTBCell.xib; sourceTree = "<group>"; };
+		C7BD5DDE1910AF7A00E4E522 /* FavoriteTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTBC.h; sourceTree = "<group>"; };
+		C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTBC.m; sourceTree = "<group>"; };
+		C7BD5DE11910AFC200E4E522 /* FavoriteTBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTBCell.h; sourceTree = "<group>"; };
+		C7BD5DE21910AFC200E4E522 /* FavoriteTBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTBCell.m; sourceTree = "<group>"; };
+		C7D296DC19245C7100597B2B /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
+		C7D296E11925783500597B2B /* Refresh80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh80.png; sourceTree = "<group>"; };
+		C7E1E53319240EE1005F46A1 /* MetroRider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MetroRider.entitlements; sourceTree = "<group>"; };
+		E373B8C53E054ABEBCC1FBD2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C795766418F391E2003D2D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C79576A218F394A6003D2D83 /* CoreData.framework in Frameworks */,
+				C79576A018F39417003D2D83 /* CoreLocation.framework in Frameworks */,
+				C795766D18F391E2003D2D83 /* CoreGraphics.framework in Frameworks */,
+				C795766F18F391E2003D2D83 /* UIKit.framework in Frameworks */,
+				C70B3A4618F7957B008D3DA2 /* MapKit.framework in Frameworks */,
+				C795766B18F391E2003D2D83 /* Foundation.framework in Frameworks */,
+				848AEC0E2D42465FA84B2908 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C795768518F391E2003D2D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C795768A18F391E2003D2D83 /* XCTest.framework in Frameworks */,
+				C795768C18F391E2003D2D83 /* UIKit.framework in Frameworks */,
+				C795768B18F391E2003D2D83 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C70C0DE2191D7C51003FF3B8 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C70C0DDF191D7A45003FF3B8 /* KTMapSearchVC.h */,
+				C70C0DE0191D7A45003FF3B8 /* KTMapSearchVC.m */,
+				C70C0DE6191D7CC4003FF3B8 /* KTSearchTBLVC.h */,
+				C70C0DE7191D7CC4003FF3B8 /* KTSearchTBLVC.m */,
+				C79BF2FC191EA5EB00B821B0 /* KTSearchTBCell.h */,
+				C79BF2FD191EA5EB00B821B0 /* KTSearchTBCell.m */,
+				C79BF2FE191EA5EB00B821B0 /* KTSearchTBCell.xib */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		C74B035E192EABF9008A6798 /* Map Images */ = {
+			isa = PBXGroup;
+			children = (
+				C7613CEC1908833C00C4449F /* left-50.png */,
+				C75E2ECB190C4CFE005E85B9 /* check.png */,
+				C75E2ED5190C5522005E85B9 /* star-50.png */,
+				C7613D08190B5A0800C4449F /* 06-magnify.png */,
+				C7613CF8190B070300C4449F /* Map-Marker-Marker-Inside-Chartreuse.png */,
+				C7613CF9190B070300C4449F /* MapMarker_Marker_Inside_Azure.png */,
+				C7613CFA190B070300C4449F /* Map-Marker-Marker-Inside-Pink.png */,
+				C7613CFB190B070300C4449F /* MapMarker_Marker_Outside_Azure.png */,
+				C7613CFC190B070300C4449F /* MapMarker_Marker_Outside_Pink.png */,
+				C7613CFD190B070300C4449F /* MapMarker_Marker_Outside_Chartreuse.png */,
+			);
+			name = "Map Images";
+			sourceTree = "<group>";
+		};
+		C74B035F192EAC15008A6798 /* Route Finder Images */ = {
+			isa = PBXGroup;
+			children = (
+				C7613D04190B584D00C4449F /* bus-32.png */,
+				C7613D06190B585D00C4449F /* train-32.png */,
+				C7D296DC19245C7100597B2B /* Refresh.png */,
+				C7D296E11925783500597B2B /* Refresh80.png */,
+			);
+			name = "Route Finder Images";
+			sourceTree = "<group>";
+		};
+		C74B0360192EAC2D008A6798 /* Backbutton */ = {
+			isa = PBXGroup;
+			children = (
+				C791F7A31916819400E3DB2F /* leftVectorArrow.png */,
+			);
+			name = Backbutton;
+			sourceTree = "<group>";
+		};
+		C74B0361192EAC74008A6798 /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C74B0362192EAC82008A6798 /* Icon-40.png */,
+				C74B0363192EAC82008A6798 /* Icon-40@2x.png */,
+				C74B0364192EAC82008A6798 /* Icon-60.png */,
+				C74B0365192EAC82008A6798 /* Icon-60@2x.png */,
+				C74B0366192EAC82008A6798 /* Icon-72.png */,
+				C74B0367192EAC82008A6798 /* Icon-72@2x.png */,
+				C74B0368192EAC82008A6798 /* Icon-76.png */,
+				C74B0369192EAC82008A6798 /* Icon-76@2x.png */,
+				C74B036A192EAC82008A6798 /* Icon-Small-50.png */,
+				C74B036B192EAC82008A6798 /* Icon-Small-50@2x.png */,
+				C74B036C192EAC82008A6798 /* Icon-Small.png */,
+				C74B036D192EAC82008A6798 /* Icon-Small@2x.png */,
+				C74B036E192EAC82008A6798 /* Icon.png */,
+				C74B036F192EAC82008A6798 /* Icon@2x.png */,
+				C74B0370192EAC82008A6798 /* iTunesArtwork.png */,
+				C74B0371192EAC82008A6798 /* iTunesArtwork@2x.png */,
+			);
+			name = "App Icons";
+			sourceTree = "<group>";
+		};
+		C74F93E518FCD2CC00079892 /* TripSession */ = {
+			isa = PBXGroup;
+			children = (
+				C70B3A5D18FCBA6C008D3DA2 /* TripMonitor.h */,
+				C70B3A5E18FCBA6C008D3DA2 /* TripMonitor.m */,
+				C742B2CD18FED343003EFF05 /* KTActiveTripStop.h */,
+				C742B2CE18FED343003EFF05 /* KTActiveTripStop.m */,
+			);
+			name = TripSession;
+			sourceTree = "<group>";
+		};
+		C74F93E618FCD2E400079892 /* GetUserLoc */ = {
+			isa = PBXGroup;
+			children = (
+				C78B816F191062AE00CC2E60 /* Master User Loc VC */,
+				C78B816E1910629300CC2E60 /* ContainerControllers */,
+			);
+			name = GetUserLoc;
+			sourceTree = "<group>";
+		};
+		C74F93E718FCD39D00079892 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				C70C0DE2191D7C51003FF3B8 /* Search */,
+				C75E2EDE190C6A08005E85B9 /* Helpers */,
+				C75E2ED7190C60C4005E85B9 /* StopInfoCallOut */,
+				C75E2EC3190B6BE2005E85B9 /* Annotations */,
+				C75E2EC2190B6BC7005E85B9 /* MasterController */,
+			);
+			name = MapView;
+			sourceTree = "<group>";
+		};
+		C74F93E818FCD40D00079892 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C70B3A4718FC60EA008D3DA2 /* WMATAData.xcdatamodeld */,
+				C7921673191DC9F30000CFAB /* Station.h */,
+				C7921674191DC9F30000CFAB /* Station.m */,
+				C7921670191DC9F30000CFAB /* UserLoc.h */,
+				C7921671191DC9F30000CFAB /* UserLoc.m */,
+				C792166D191DC9F30000CFAB /* Stop.h */,
+				C792166E191DC9F30000CFAB /* Stop.m */,
+				C792166A191DC9F20000CFAB /* Route.h */,
+				C792166B191DC9F20000CFAB /* Route.m */,
+				C74F942D18FCE5AC00079892 /* KTRouteStopStore.h */,
+				C74F942E18FCE5AC00079892 /* KTRouteStopStore.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		C75E2EC2190B6BC7005E85B9 /* MasterController */ = {
+			isa = PBXGroup;
+			children = (
+				C70B3A5A18FCB033008D3DA2 /* KTRouteMapVC.h */,
+				C70B3A5B18FCB033008D3DA2 /* KTRouteMapVC.m */,
+			);
+			name = MasterController;
+			sourceTree = "<group>";
+		};
+		C75E2EC3190B6BE2005E85B9 /* Annotations */ = {
+			isa = PBXGroup;
+			children = (
+				C75E2EBF190B6AFE005E85B9 /* KTAnnotationView.h */,
+				C75E2EC0190B6AFE005E85B9 /* KTAnnotationView.m */,
+				C790F382190243D600AE6C2E /* KTAnnotationPoint.h */,
+				C790F383190243D600AE6C2E /* KTAnnotationPoint.m */,
+			);
+			name = Annotations;
+			sourceTree = "<group>";
+		};
+		C75E2ED7190C60C4005E85B9 /* StopInfoCallOut */ = {
+			isa = PBXGroup;
+			children = (
+				C75E2EDB190C6165005E85B9 /* StopInfoCallOutVC.h */,
+				C75E2EDC190C6165005E85B9 /* StopInfoCallOutVC.m */,
+				C75DAECD190D684800BC8774 /* ChosenStopVC.h */,
+				C75DAECE190D684800BC8774 /* ChosenStopVC.m */,
+				C78B816A190F095600CC2E60 /* FavoriteCallOutVC.h */,
+				C78B816B190F095600CC2E60 /* FavoriteCallOutVC.m */,
+			);
+			name = StopInfoCallOut;
+			sourceTree = "<group>";
+		};
+		C75E2EDE190C6A08005E85B9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C74F93E918FCDEBE00079892 /* KTNotifyStop.h */,
+				C74F93EA18FCDEBE00079892 /* KTNotifyStop.m */,
+				C790F37C190241FA00AE6C2E /* KTChooseStopButton.h */,
+				C790F37D190241FA00AE6C2E /* KTChooseStopButton.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C78B816D1910627F00CC2E60 /* HelperViews */ = {
+			isa = PBXGroup;
+			children = (
+				C7613CEE1908884B00C4449F /* MRCircularProgressView.h */,
+				C7613CEF1908884B00C4449F /* MRCircularProgressView.m */,
+			);
+			name = HelperViews;
+			sourceTree = "<group>";
+		};
+		C78B816E1910629300CC2E60 /* ContainerControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C70B3A5018FC9818008D3DA2 /* RideSelectCVC.h */,
+				C70B3A5118FC9818008D3DA2 /* RideSelectCVC.m */,
+				C70B3A5718FCAE61008D3DA2 /* RideSelectCell.h */,
+				C70B3A5818FCAE61008D3DA2 /* RideSelectCell.m */,
+			);
+			name = ContainerControllers;
+			sourceTree = "<group>";
+		};
+		C78B816F191062AE00CC2E60 /* Master User Loc VC */ = {
+			isa = PBXGroup;
+			children = (
+				C795767F18F391E2003D2D83 /* KTViewController.h */,
+				C795768018F391E2003D2D83 /* KTViewController.m */,
+				C78B816D1910627F00CC2E60 /* HelperViews */,
+			);
+			name = "Master User Loc VC";
+			sourceTree = "<group>";
+		};
+		C795765E18F391E2003D2D83 = {
+			isa = PBXGroup;
+			children = (
+				C795767018F391E2003D2D83 /* MetroRider */,
+				C795768F18F391E2003D2D83 /* MetroRiderTests */,
+				C795766918F391E2003D2D83 /* Frameworks */,
+				C795766818F391E2003D2D83 /* Products */,
+				E373B8C53E054ABEBCC1FBD2 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		C795766818F391E2003D2D83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C795766718F391E2003D2D83 /* MetroRider.app */,
+				C795768818F391E2003D2D83 /* MetroRiderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C795766918F391E2003D2D83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C70B3A4518F7957B008D3DA2 /* MapKit.framework */,
+				C79576A118F394A6003D2D83 /* CoreData.framework */,
+				C795769F18F39417003D2D83 /* CoreLocation.framework */,
+				C795766A18F391E2003D2D83 /* Foundation.framework */,
+				C795766C18F391E2003D2D83 /* CoreGraphics.framework */,
+				C795766E18F391E2003D2D83 /* UIKit.framework */,
+				C795768918F391E2003D2D83 /* XCTest.framework */,
+				58CB296BFC23482D8F95B087 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C795767018F391E2003D2D83 /* MetroRider */ = {
+			isa = PBXGroup;
+			children = (
+				C7E1E53319240EE1005F46A1 /* MetroRider.entitlements */,
+				C795767918F391E2003D2D83 /* KTAppDelegate.h */,
+				C795767A18F391E2003D2D83 /* KTAppDelegate.m */,
+				C795767C18F391E2003D2D83 /* Main.storyboard */,
+				C7BD5DE419124BF400E4E522 /* Favorites */,
+				C74F93E518FCD2CC00079892 /* TripSession */,
+				C7FF299418FD8AD300E3927B /* WMATAFetches */,
+				C74F93E818FCD40D00079892 /* Models */,
+				C74F93E718FCD39D00079892 /* MapView */,
+				C74F93E618FCD2E400079892 /* GetUserLoc */,
+				C795767118F391E2003D2D83 /* Supporting Files */,
+				C795768218F391E2003D2D83 /* Images.xcassets */,
+			);
+			path = MetroRider;
+			sourceTree = "<group>";
+		};
+		C795767118F391E2003D2D83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C74B0382192EEA74008A6798 /* reload-75.png */,
+				C74355E51930536900015DEB /* launchIMAGE.png */,
+				C74B0361192EAC74008A6798 /* App Icons */,
+				C74B0360192EAC2D008A6798 /* Backbutton */,
+				C74B035F192EAC15008A6798 /* Route Finder Images */,
+				C74B035E192EABF9008A6798 /* Map Images */,
+				C74B035B192EA666008A6798 /* your stop master.psd */,
+				C74B035C192EAAE9008A6798 /* your_stop_fresh.png */,
+				C76299931921A69100B5EC26 /* station_uuids.txt */,
+				C7613CEA1908825D00C4449F /* 193-location-arrow.png */,
+				C795767218F391E2003D2D83 /* MetroRider-Info.plist */,
+				C795767318F391E2003D2D83 /* InfoPlist.strings */,
+				C795767618F391E2003D2D83 /* main.m */,
+				C795767818F391E2003D2D83 /* MetroRider-Prefix.pch */,
+				C762999A1921ACDB00B5EC26 /* Stations.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C795768F18F391E2003D2D83 /* MetroRiderTests */ = {
+			isa = PBXGroup;
+			children = (
+				C795769518F391E2003D2D83 /* MetroRiderTests.m */,
+				C795769018F391E2003D2D83 /* Supporting Files */,
+			);
+			path = MetroRiderTests;
+			sourceTree = "<group>";
+		};
+		C795769018F391E2003D2D83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C795769118F391E2003D2D83 /* MetroRiderTests-Info.plist */,
+				C795769218F391E2003D2D83 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C7BD5DE419124BF400E4E522 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				C7BD5DDE1910AF7A00E4E522 /* FavoriteTBC.h */,
+				C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */,
+				C7BD5DE11910AFC200E4E522 /* FavoriteTBCell.h */,
+				C7BD5DE21910AFC200E4E522 /* FavoriteTBCell.m */,
+				C791F79E191673D400E3DB2F /* LeftToRightSegue.h */,
+				C791F79F191673D400E3DB2F /* LeftToRightSegue.m */,
+				C791F7A519185BA100E3DB2F /* KTFavoritesVC.h */,
+				C791F7A619185BA100E3DB2F /* KTFavoritesVC.m */,
+				C791F7A81919B1CE00E3DB2F /* FavoriteTBCell.xib */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		C7FF299418FD8AD300E3927B /* WMATAFetches */ = {
+			isa = PBXGroup;
+			children = (
+				C70B3A3F18F4BD59008D3DA2 /* KTDataLoader.h */,
+				C70B3A4018F4BD59008D3DA2 /* KTDataLoader.m */,
+			);
+			name = WMATAFetches;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C795766618F391E2003D2D83 /* MetroRider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C795769918F391E2003D2D83 /* Build configuration list for PBXNativeTarget "MetroRider" */;
+			buildPhases = (
+				11C31233B9624E0DB0EC4614 /* Check Pods Manifest.lock */,
+				C795766318F391E2003D2D83 /* Sources */,
+				C795766418F391E2003D2D83 /* Frameworks */,
+				C795766518F391E2003D2D83 /* Resources */,
+				DF85F07E9C774DFC8C3E5C8E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetroRider;
+			productName = MetroRider;
+			productReference = C795766718F391E2003D2D83 /* MetroRider.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C795768718F391E2003D2D83 /* MetroRiderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C795769C18F391E2003D2D83 /* Build configuration list for PBXNativeTarget "MetroRiderTests" */;
+			buildPhases = (
+				C795768418F391E2003D2D83 /* Sources */,
+				C795768518F391E2003D2D83 /* Frameworks */,
+				C795768618F391E2003D2D83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C795768E18F391E2003D2D83 /* PBXTargetDependency */,
+			);
+			name = MetroRiderTests;
+			productName = MetroRiderTests;
+			productReference = C795768818F391E2003D2D83 /* MetroRiderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C795765F18F391E2003D2D83 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Taniguchi;
+				TargetAttributes = {
+					C795766618F391E2003D2D83 = {
+						DevelopmentTeam = 3B3FT42G96;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					C795768718F391E2003D2D83 = {
+						TestTargetID = C795766618F391E2003D2D83;
+					};
+				};
+			};
+			buildConfigurationList = C795766218F391E2003D2D83 /* Build configuration list for PBXProject "MetroRider" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C795765E18F391E2003D2D83;
+			productRefGroup = C795766818F391E2003D2D83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C795766618F391E2003D2D83 /* MetroRider */,
+				C795768718F391E2003D2D83 /* MetroRiderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C795766518F391E2003D2D83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74B0383192EEA74008A6798 /* reload-75.png in Resources */,
+				C74355E61930536900015DEB /* launchIMAGE.png in Resources */,
+				C7613D00190B070300C4449F /* Map-Marker-Marker-Inside-Pink.png in Resources */,
+				C74B035D192EAAE9008A6798 /* your_stop_fresh.png in Resources */,
+				C74B037B192EAC82008A6798 /* Icon-Small-50@2x.png in Resources */,
+				C74B0377192EAC82008A6798 /* Icon-72@2x.png in Resources */,
+				C791F7A41916819400E3DB2F /* leftVectorArrow.png in Resources */,
+				C74B0375192EAC82008A6798 /* Icon-60@2x.png in Resources */,
+				C7613D05190B584D00C4449F /* bus-32.png in Resources */,
+				C7613CEB1908825D00C4449F /* 193-location-arrow.png in Resources */,
+				C74B037C192EAC82008A6798 /* Icon-Small.png in Resources */,
+				C7613D01190B070300C4449F /* MapMarker_Marker_Outside_Azure.png in Resources */,
+				C7613D07190B585D00C4449F /* train-32.png in Resources */,
+				C74B0381192EAC82008A6798 /* iTunesArtwork@2x.png in Resources */,
+				C7613D03190B070300C4449F /* MapMarker_Marker_Outside_Chartreuse.png in Resources */,
+				C7613CFE190B070300C4449F /* Map-Marker-Marker-Inside-Chartreuse.png in Resources */,
+				C74B0378192EAC82008A6798 /* Icon-76.png in Resources */,
+				C74B0373192EAC82008A6798 /* Icon-40@2x.png in Resources */,
+				C74B037F192EAC82008A6798 /* Icon@2x.png in Resources */,
+				C795768318F391E2003D2D83 /* Images.xcassets in Resources */,
+				C74B0379192EAC82008A6798 /* Icon-76@2x.png in Resources */,
+				C791F7A91919B1CE00E3DB2F /* FavoriteTBCell.xib in Resources */,
+				C7613D02190B070300C4449F /* MapMarker_Marker_Outside_Pink.png in Resources */,
+				C75E2ECC190C4CFE005E85B9 /* check.png in Resources */,
+				C74B0374192EAC82008A6798 /* Icon-60.png in Resources */,
+				C74B037D192EAC82008A6798 /* Icon-Small@2x.png in Resources */,
+				C74B037E192EAC82008A6798 /* Icon.png in Resources */,
+				C74B0376192EAC82008A6798 /* Icon-72.png in Resources */,
+				C795767518F391E2003D2D83 /* InfoPlist.strings in Resources */,
+				C7613CFF190B070300C4449F /* MapMarker_Marker_Inside_Azure.png in Resources */,
+				C76299941921A69100B5EC26 /* station_uuids.txt in Resources */,
+				C79BF300191EA5EB00B821B0 /* KTSearchTBCell.xib in Resources */,
+				C74B037A192EAC82008A6798 /* Icon-Small-50.png in Resources */,
+				C75E2ED6190C5522005E85B9 /* star-50.png in Resources */,
+				C7D296DD19245C7100597B2B /* Refresh.png in Resources */,
+				C7D296E21925783500597B2B /* Refresh80.png in Resources */,
+				C74B0380192EAC82008A6798 /* iTunesArtwork.png in Resources */,
+				C795767E18F391E2003D2D83 /* Main.storyboard in Resources */,
+				C7613CED1908833C00C4449F /* left-50.png in Resources */,
+				C762999B1921ACDB00B5EC26 /* Stations.plist in Resources */,
+				C7613D09190B5A0800C4449F /* 06-magnify.png in Resources */,
+				C74B0372192EAC82008A6798 /* Icon-40.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C795768618F391E2003D2D83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C795769418F391E2003D2D83 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11C31233B9624E0DB0EC4614 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF85F07E9C774DFC8C3E5C8E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C795766318F391E2003D2D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74F942F18FCE5AC00079892 /* KTRouteStopStore.m in Sources */,
+				C7BD5DE01910AF7A00E4E522 /* FavoriteTBC.m in Sources */,
+				C75E2EC1190B6AFE005E85B9 /* KTAnnotationView.m in Sources */,
+				C7921675191DC9F30000CFAB /* Station.m in Sources */,
+				C70B3A5C18FCB033008D3DA2 /* KTRouteMapVC.m in Sources */,
+				C74F93EB18FCDEBE00079892 /* KTNotifyStop.m in Sources */,
+				C7921672191DC9F30000CFAB /* UserLoc.m in Sources */,
+				C795768118F391E2003D2D83 /* KTViewController.m in Sources */,
+				C70C0DE8191D7CC4003FF3B8 /* KTSearchTBLVC.m in Sources */,
+				C792166C191DC9F20000CFAB /* Route.m in Sources */,
+				C795767718F391E2003D2D83 /* main.m in Sources */,
+				C70C0DE1191D7A45003FF3B8 /* KTMapSearchVC.m in Sources */,
+				C795767B18F391E2003D2D83 /* KTAppDelegate.m in Sources */,
+				C75E2EDD190C6165005E85B9 /* StopInfoCallOutVC.m in Sources */,
+				C79BF2FF191EA5EB00B821B0 /* KTSearchTBCell.m in Sources */,
+				C70B3A5218FC9818008D3DA2 /* RideSelectCVC.m in Sources */,
+				C70B3A4918FC60EA008D3DA2 /* WMATAData.xcdatamodeld in Sources */,
+				C78B816C190F095600CC2E60 /* FavoriteCallOutVC.m in Sources */,
+				C70B3A4118F4BD59008D3DA2 /* KTDataLoader.m in Sources */,
+				C790F37E190241FA00AE6C2E /* KTChooseStopButton.m in Sources */,
+				C792166F191DC9F30000CFAB /* Stop.m in Sources */,
+				C70B3A5918FCAE61008D3DA2 /* RideSelectCell.m in Sources */,
+				C7613CF01908884B00C4449F /* MRCircularProgressView.m in Sources */,
+				C791F7A0191673D400E3DB2F /* LeftToRightSegue.m in Sources */,
+				C7BD5DE31910AFC200E4E522 /* FavoriteTBCell.m in Sources */,
+				C70B3A5F18FCBA6C008D3DA2 /* TripMonitor.m in Sources */,
+				C791F7A719185BA100E3DB2F /* KTFavoritesVC.m in Sources */,
+				C75DAECF190D684800BC8774 /* ChosenStopVC.m in Sources */,
+				C790F384190243D600AE6C2E /* KTAnnotationPoint.m in Sources */,
+				C742B2CF18FED343003EFF05 /* KTActiveTripStop.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C795768418F391E2003D2D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C795769618F391E2003D2D83 /* MetroRiderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C795768E18F391E2003D2D83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C795766618F391E2003D2D83 /* MetroRider */;
+			targetProxy = C795768D18F391E2003D2D83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C795767318F391E2003D2D83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C795767418F391E2003D2D83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C795767C18F391E2003D2D83 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C795767D18F391E2003D2D83 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C795769218F391E2003D2D83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C795769318F391E2003D2D83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C795769718F391E2003D2D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C795769818F391E2003D2D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C795769A18F391E2003D2D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E373B8C53E054ABEBCC1FBD2 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = MetroRider/MetroRider.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kevin Taniguchi (3B3FT42G96)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Development: Kevin Taniguchi";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=*]" = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MetroRider/MetroRider-Prefix.pch";
+				INFOPLIST_FILE = "MetroRider/MetroRider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3229BEAE-6F0B-4179-B017-CA7D80F3AF63";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C795769B18F391E2003D2D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E373B8C53E054ABEBCC1FBD2 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = MetroRider/MetroRider.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kevin Taniguchi (3B3FT42G96)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kevin Taniguchi (3B3FT42G96)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MetroRider/MetroRider-Prefix.pch";
+				INFOPLIST_FILE = "MetroRider/MetroRider-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "3229BEAE-6F0B-4179-B017-CA7D80F3AF63";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C795769D18F391E2003D2D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MetroRider.app/MetroRider";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MetroRider/MetroRider-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MetroRiderTests/MetroRiderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C795769E18F391E2003D2D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MetroRider.app/MetroRider";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MetroRider/MetroRider-Prefix.pch";
+				INFOPLIST_FILE = "MetroRiderTests/MetroRiderTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C795766218F391E2003D2D83 /* Build configuration list for PBXProject "MetroRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C795769718F391E2003D2D83 /* Debug */,
+				C795769818F391E2003D2D83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C795769918F391E2003D2D83 /* Build configuration list for PBXNativeTarget "MetroRider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C795769A18F391E2003D2D83 /* Debug */,
+				C795769B18F391E2003D2D83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C795769C18F391E2003D2D83 /* Build configuration list for PBXNativeTarget "MetroRiderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C795769D18F391E2003D2D83 /* Debug */,
+				C795769E18F391E2003D2D83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C70B3A4718FC60EA008D3DA2 /* WMATAData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C78B8169190DDFF500CC2E60 /* WMATAData 6.xcdatamodel */,
+				C70C0D91191B2C48003FF3B8 /* WMATAData 7.xcdatamodel */,
+				C7921669191DC9CB0000CFAB /* WMATAData 8.xcdatamodel */,
+				C74F943018FD058E00079892 /* WMATAData 2.xcdatamodel */,
+				C74F943E18FD100700079892 /* WMATAData 4.xcdatamodel */,
+				C74F944518FD10CB00079892 /* WMATAData 5.xcdatamodel */,
+				C74F943718FD0F4500079892 /* WMATAData 3.xcdatamodel */,
+				C70B3A4818FC60EA008D3DA2 /* WMATAData.xcdatamodel */,
+			);
+			currentVersion = C7921669191DC9CB0000CFAB /* WMATAData 8.xcdatamodel */;
+			path = WMATAData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C795765F18F391E2003D2D83 /* Project object */;
+}
