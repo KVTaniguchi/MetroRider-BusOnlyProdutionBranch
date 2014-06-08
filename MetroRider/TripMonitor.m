@@ -78,30 +78,18 @@
 
     
     if ([northBoundStops count] > 0) {
-//        for (KTActiveTripStop *stop in northBoundStops) {
-//            NSLog(@"%@ %@ %@", stop.routeSequence, stop.stopName, stop.direction);
-//        }
         [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:northBoundStops]];
     }
     if ([southBoundStops count] > 0) {
-//        for (KTActiveTripStop *stop in southBoundStops) {
-//            NSLog(@"%@ %@ %@", stop.routeSequence, stop.stopName, stop.direction);
-//        }
         [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:southBoundStops]];
     }
     if ([eastBoundStops count] > 0) {
-//        for (KTActiveTripStop *stop in eastBoundStops) {
-//            NSLog(@"%@ %@ %@", stop.routeSequence, stop.stopName, stop.direction);
-//        }
         [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:eastBoundStops]];
     }
     if ([westBoundStops count] > 0) {
-//        for (KTActiveTripStop *stop in westBoundStops) {
-//            NSLog(@"%@ %@ %@", stop.routeSequence, stop.stopName, stop.direction);
-//        }
         [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:westBoundStops]];
     }
-    return closestStops;  // return the closest stops in both directions
+    return closestStops;
 }
 
 -(KTActiveTripStop*)getClosestStopToUserLoc:(CLLocation*)userLoc WithStops:(NSMutableArray*)stops{
@@ -137,7 +125,6 @@
 
 -(NSArray*)findFirstThreeStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop{
     NSArray *allStopsOnDestRoute = [[KTRouteStopStore sharedStore]fetchStopsForRoute:finalStop.route andDirection:finalStop.direction];
-    // find stop closest to user
     int min = 1000;
     NSString *stopName = [NSString new];
     NSString *closestSeq = [NSString new];
@@ -227,7 +214,6 @@
         activeStop.stopID = stop.stopID;
         [activeStops addObject:activeStop];
     }
-    // get last three stops
     int thirdStopSeq = [finalStop.sequence intValue] - 3;
     int secondStopSeq = [finalStop.sequence intValue] - 2;
     int lastStopSeq = [finalStop.sequence intValue] - 1;
@@ -259,7 +245,6 @@
         }
     }
     self.closestActiveStops = [[NSMutableArray alloc]init];
-    // 3 now that we have the nearest active stop (while traveling) find all stops from nearest stop to destination stop and return them all in an array
     int closestActiveStopSeqNum = [self.closestActiveStop.routeSequence intValue];
     int finalStopSeqNum = [finalStop.sequence intValue];
     for (KTActiveTripStop *actStop in activeStops) {
@@ -269,7 +254,7 @@
             [self.closestActiveStops addObject:actStop];
         }
     }
-    return self.closestActiveStops; // return an array of stops that include the nearest stop to the current users location and the final stop
+    return self.closestActiveStops;
 }
 
 @end
