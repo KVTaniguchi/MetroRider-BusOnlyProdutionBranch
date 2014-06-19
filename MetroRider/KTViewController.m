@@ -2,7 +2,6 @@
 //  MetroRider
 //  Created by Kevin Taniguchi on 4/7/14.
 //  Copyright (c) 2014 Taniguchi. All rights reserved.
-// http://api.wmata.com/Bus.svc/json/jRouteDetails?routeId=16L&date=2014-04-08&api_key=6t9wbmeufz7x7g4v28wemdgx get bus route details
 
 #import "KTViewController.h"
 

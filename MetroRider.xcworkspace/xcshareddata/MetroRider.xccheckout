@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>680FBC26-AA09-4D39-8D2A-A0B28D329916</string>
+	<string>43178263-8222-446C-A071-73CD940B0001</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MetroRider</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</key>
-		<string>https://github.com/KVTaniguchi/MetroRider-BusOnlyEnhanced.git</string>
+		<key>D0D6567E-B7C7-4394-B6B4-73DA0751B9A6</key>
+		<string>https://github.com/KVTaniguchi/MetroRider-BusOnlyProdutionBranch.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MetroRider.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</key>
+		<key>D0D6567E-B7C7-4394-B6B4-73DA0751B9A6</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/KVTaniguchi/MetroRider-BusOnlyEnhanced.git</string>
+	<string>https://github.com/KVTaniguchi/MetroRider-BusOnlyProdutionBranch.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</string>
+	<string>D0D6567E-B7C7-4394-B6B4-73DA0751B9A6</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>07EDD4D2-DF42-4376-ADDB-B39C9DD26C89</string>
+			<string>D0D6567E-B7C7-4394-B6B4-73DA0751B9A6</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MetroRider-BusOnlyProdutionBranch</string>
 		</dict>

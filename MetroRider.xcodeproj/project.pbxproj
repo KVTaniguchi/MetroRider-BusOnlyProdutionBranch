@@ -89,8 +89,6 @@
 		C79BF300191EA5EB00B821B0 /* KTSearchTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C79BF2FE191EA5EB00B821B0 /* KTSearchTBCell.xib */; };
 		C7BD5DE01910AF7A00E4E522 /* FavoriteTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */; };
 		C7BD5DE31910AFC200E4E522 /* FavoriteTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5DE21910AFC200E4E522 /* FavoriteTBCell.m */; };
-		C7D296DD19245C7100597B2B /* Refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D296DC19245C7100597B2B /* Refresh.png */; };
-		C7D296E21925783500597B2B /* Refresh80.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D296E11925783500597B2B /* Refresh80.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -225,8 +223,6 @@
 		C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTBC.m; sourceTree = "<group>"; };
 		C7BD5DE11910AFC200E4E522 /* FavoriteTBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTBCell.h; sourceTree = "<group>"; };
 		C7BD5DE21910AFC200E4E522 /* FavoriteTBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTBCell.m; sourceTree = "<group>"; };
-		C7D296DC19245C7100597B2B /* Refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh.png; sourceTree = "<group>"; };
-		C7D296E11925783500597B2B /* Refresh80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Refresh80.png; sourceTree = "<group>"; };
 		C7E1E53319240EE1005F46A1 /* MetroRider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MetroRider.entitlements; sourceTree = "<group>"; };
 		E373B8C53E054ABEBCC1FBD2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -295,8 +291,6 @@
 			children = (
 				C7613D04190B584D00C4449F /* bus-32.png */,
 				C7613D06190B585D00C4449F /* train-32.png */,
-				C7D296DC19245C7100597B2B /* Refresh.png */,
-				C7D296E11925783500597B2B /* Refresh80.png */,
 			);
 			name = "Route Finder Images";
 			sourceTree = "<group>";
@@ -702,8 +696,6 @@
 				C79BF300191EA5EB00B821B0 /* KTSearchTBCell.xib in Resources */,
 				C74B037A192EAC82008A6798 /* Icon-Small-50.png in Resources */,
 				C75E2ED6190C5522005E85B9 /* star-50.png in Resources */,
-				C7D296DD19245C7100597B2B /* Refresh.png in Resources */,
-				C7D296E21925783500597B2B /* Refresh80.png in Resources */,
 				C74B0380192EAC82008A6798 /* iTunesArtwork.png in Resources */,
 				C795767E18F391E2003D2D83 /* Main.storyboard in Resources */,
 				C7613CED1908833C00C4449F /* left-50.png in Resources */,
@@ -918,10 +910,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = MetroRider/MetroRider.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kevin Taniguchi (3B3FT42G96)";
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Development: Kevin Taniguchi";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_RESOURCE_RULES_PATH[sdk=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MetroRider/MetroRider-Prefix.pch";
@@ -938,9 +931,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "";
 				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = MetroRider/MetroRider.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kevin Taniguchi (3B3FT42G96)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kevin Taniguchi (3B3FT42G96)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MetroRider/MetroRider-Prefix.pch";
 				INFOPLIST_FILE = "MetroRider/MetroRider-Info.plist";
