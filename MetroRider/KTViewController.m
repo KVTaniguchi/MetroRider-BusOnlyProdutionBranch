@@ -59,7 +59,6 @@
 //    });
 }
 
-// entry point //
 -(void)reloadRouteData{
     [self cleanCollectionView];
     [self checkUserLocation];
@@ -157,7 +156,7 @@
             [self setUpCollectionView];
         }
         else if(_dataHasBeenFetched == NO){
-            [self fetchWMATAAPIData]; // if wmata api returns routes then it will fire the kvo for numOfUniqueRoutes, which will in turn fire set up collection view
+            [self fetchWMATAAPIData]; 
         }
     }
     if (_reloadRoutesButtonPressed == YES && _dataHasBeenFetched == NO) {

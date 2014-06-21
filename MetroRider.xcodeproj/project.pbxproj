@@ -82,11 +82,12 @@
 		C795768B18F391E2003D2D83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766A18F391E2003D2D83 /* Foundation.framework */; };
 		C795768C18F391E2003D2D83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795766E18F391E2003D2D83 /* UIKit.framework */; };
 		C795769418F391E2003D2D83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C795769218F391E2003D2D83 /* InfoPlist.strings */; };
-		C795769618F391E2003D2D83 /* MetroRiderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C795769518F391E2003D2D83 /* MetroRiderTests.m */; };
 		C79576A018F39417003D2D83 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C795769F18F39417003D2D83 /* CoreLocation.framework */; };
 		C79576A218F394A6003D2D83 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C79576A118F394A6003D2D83 /* CoreData.framework */; };
 		C79BF2FF191EA5EB00B821B0 /* KTSearchTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C79BF2FD191EA5EB00B821B0 /* KTSearchTBCell.m */; };
 		C79BF300191EA5EB00B821B0 /* KTSearchTBCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C79BF2FE191EA5EB00B821B0 /* KTSearchTBCell.xib */; };
+		C7A3825D195292A3009119EF /* KTDistanceCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A3825C195292A3009119EF /* KTDistanceCalculator.m */; };
+		C7A382711955C3E2009119EF /* KTTestTripMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A382701955C3E2009119EF /* KTTestTripMonitor.m */; };
 		C7BD5DE01910AF7A00E4E522 /* FavoriteTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */; };
 		C7BD5DE31910AFC200E4E522 /* FavoriteTBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BD5DE21910AFC200E4E522 /* FavoriteTBCell.m */; };
 /* End PBXBuildFile section */
@@ -213,12 +214,14 @@
 		C795768918F391E2003D2D83 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C795769118F391E2003D2D83 /* MetroRiderTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MetroRiderTests-Info.plist"; sourceTree = "<group>"; };
 		C795769318F391E2003D2D83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C795769518F391E2003D2D83 /* MetroRiderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MetroRiderTests.m; sourceTree = "<group>"; };
 		C795769F18F39417003D2D83 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C79576A118F394A6003D2D83 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C79BF2FC191EA5EB00B821B0 /* KTSearchTBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSearchTBCell.h; sourceTree = "<group>"; };
 		C79BF2FD191EA5EB00B821B0 /* KTSearchTBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSearchTBCell.m; sourceTree = "<group>"; };
 		C79BF2FE191EA5EB00B821B0 /* KTSearchTBCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KTSearchTBCell.xib; sourceTree = "<group>"; };
+		C7A3825B195292A3009119EF /* KTDistanceCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTDistanceCalculator.h; sourceTree = "<group>"; };
+		C7A3825C195292A3009119EF /* KTDistanceCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTDistanceCalculator.m; sourceTree = "<group>"; };
+		C7A382701955C3E2009119EF /* KTTestTripMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTTestTripMonitor.m; sourceTree = "<group>"; };
 		C7BD5DDE1910AF7A00E4E522 /* FavoriteTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTBC.h; sourceTree = "<group>"; };
 		C7BD5DDF1910AF7A00E4E522 /* FavoriteTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteTBC.m; sourceTree = "<group>"; };
 		C7BD5DE11910AFC200E4E522 /* FavoriteTBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteTBCell.h; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 			children = (
 				C70B3A5A18FCB033008D3DA2 /* KTRouteMapVC.h */,
 				C70B3A5B18FCB033008D3DA2 /* KTRouteMapVC.m */,
+				C7A3825B195292A3009119EF /* KTDistanceCalculator.h */,
+				C7A3825C195292A3009119EF /* KTDistanceCalculator.m */,
 			);
 			name = MasterController;
 			sourceTree = "<group>";
@@ -529,8 +534,8 @@
 		C795768F18F391E2003D2D83 /* MetroRiderTests */ = {
 			isa = PBXGroup;
 			children = (
-				C795769518F391E2003D2D83 /* MetroRiderTests.m */,
 				C795769018F391E2003D2D83 /* Supporting Files */,
+				C7A382701955C3E2009119EF /* KTTestTripMonitor.m */,
 			);
 			path = MetroRiderTests;
 			sourceTree = "<group>";
@@ -775,6 +780,7 @@
 				C790F37E190241FA00AE6C2E /* KTChooseStopButton.m in Sources */,
 				C792166F191DC9F30000CFAB /* Stop.m in Sources */,
 				C70B3A5918FCAE61008D3DA2 /* RideSelectCell.m in Sources */,
+				C7A3825D195292A3009119EF /* KTDistanceCalculator.m in Sources */,
 				C7613CF01908884B00C4449F /* MRCircularProgressView.m in Sources */,
 				C791F7A0191673D400E3DB2F /* LeftToRightSegue.m in Sources */,
 				C7BD5DE31910AFC200E4E522 /* FavoriteTBCell.m in Sources */,
@@ -790,7 +796,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C795769618F391E2003D2D83 /* MetroRiderTests.m in Sources */,
+				C7A382711955C3E2009119EF /* KTTestTripMonitor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

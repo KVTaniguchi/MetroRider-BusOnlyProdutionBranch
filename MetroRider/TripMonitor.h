@@ -40,7 +40,6 @@ typedef void(^myCompletion)(BOOL);
 
 @property (nonatomic,strong) CMDeviceMotion *motion;
 @property (nonatomic,strong) NSString *motionType;
-
 @property (nonatomic,strong) NSMutableArray *closestActiveStops;
 @property (nonatomic,strong) KTActiveTripStop *closestActiveStop;
 @property (nonatomic,strong) KTActiveTripStop *thirdStopFromDest;
