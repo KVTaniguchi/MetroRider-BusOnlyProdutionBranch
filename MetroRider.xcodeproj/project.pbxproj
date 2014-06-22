@@ -17,6 +17,7 @@
 		C70B3A5F18FCBA6C008D3DA2 /* TripMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C70B3A5E18FCBA6C008D3DA2 /* TripMonitor.m */; };
 		C70C0DE1191D7A45003FF3B8 /* KTMapSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C70C0DE0191D7A45003FF3B8 /* KTMapSearchVC.m */; };
 		C70C0DE8191D7CC4003FF3B8 /* KTSearchTBLVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C70C0DE7191D7CC4003FF3B8 /* KTSearchTBLVC.m */; };
+		C724FB6E1957741B0029560C /* KTMapFlagTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = C724FB6D1957741B0029560C /* KTMapFlagTracker.m */; };
 		C742B2CF18FED343003EFF05 /* KTActiveTripStop.m in Sources */ = {isa = PBXBuildFile; fileRef = C742B2CE18FED343003EFF05 /* KTActiveTripStop.m */; };
 		C74355E61930536900015DEB /* launchIMAGE.png in Resources */ = {isa = PBXBuildFile; fileRef = C74355E51930536900015DEB /* launchIMAGE.png */; };
 		C74B035D192EAAE9008A6798 /* your_stop_fresh.png in Resources */ = {isa = PBXBuildFile; fileRef = C74B035C192EAAE9008A6798 /* your_stop_fresh.png */; };
@@ -120,6 +121,8 @@
 		C70C0DE0191D7A45003FF3B8 /* KTMapSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMapSearchVC.m; sourceTree = "<group>"; };
 		C70C0DE6191D7CC4003FF3B8 /* KTSearchTBLVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSearchTBLVC.h; sourceTree = "<group>"; };
 		C70C0DE7191D7CC4003FF3B8 /* KTSearchTBLVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSearchTBLVC.m; sourceTree = "<group>"; };
+		C724FB6C1957741B0029560C /* KTMapFlagTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTMapFlagTracker.h; sourceTree = "<group>"; };
+		C724FB6D1957741B0029560C /* KTMapFlagTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTMapFlagTracker.m; sourceTree = "<group>"; };
 		C742B2CD18FED343003EFF05 /* KTActiveTripStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTActiveTripStop.h; sourceTree = "<group>"; };
 		C742B2CE18FED343003EFF05 /* KTActiveTripStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTActiveTripStop.m; sourceTree = "<group>"; };
 		C74355E51930536900015DEB /* launchIMAGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchIMAGE.png; sourceTree = "<group>"; };
@@ -416,6 +419,8 @@
 				C74F93EA18FCDEBE00079892 /* KTNotifyStop.m */,
 				C790F37C190241FA00AE6C2E /* KTChooseStopButton.h */,
 				C790F37D190241FA00AE6C2E /* KTChooseStopButton.m */,
+				C724FB6C1957741B0029560C /* KTMapFlagTracker.h */,
+				C724FB6D1957741B0029560C /* KTMapFlagTracker.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				C792166F191DC9F30000CFAB /* Stop.m in Sources */,
 				C70B3A5918FCAE61008D3DA2 /* RideSelectCell.m in Sources */,
 				C7613CF01908884B00C4449F /* MRCircularProgressView.m in Sources */,
+				C724FB6E1957741B0029560C /* KTMapFlagTracker.m in Sources */,
 				C791F7A0191673D400E3DB2F /* LeftToRightSegue.m in Sources */,
 				C7BD5DE31910AFC200E4E522 /* FavoriteTBCell.m in Sources */,
 				C70B3A5F18FCBA6C008D3DA2 /* TripMonitor.m in Sources */,

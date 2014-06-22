@@ -27,49 +27,11 @@
     [super tearDown];
 }
 
--(void)testGetClosestActiveTripStopsForRoute{
-    
+-(void)testTripMonitorLoadsAllActiveStopsForARoute{
+    TripMonitor *testTripMonitor = [TripMonitor new];
+    NSString *testRoute = @"D2";
+    NSArray *testArray = [NSArray arrayWithArray:[testTripMonitor loadAllActiveTripStopsForRoute:testRoute]];
+    XCTAssertNotNil(testArray, @"a test Array should not be nil");
 }
 
 @end
-
-//-(NSArray*)getCloseActiveTripStopsForRoute:(NSString*)route withLocation:(CLLocation*)userLoc{
-//    NSMutableArray *northBoundStops = [[NSMutableArray alloc]init];
-//    NSMutableArray *southBoundStops = [[NSMutableArray alloc]init];
-//    NSMutableArray *eastBoundStops = [[NSMutableArray alloc]init];
-//    NSMutableArray *westBoundStops = [[NSMutableArray alloc]init];
-//    NSMutableArray *closestStops = [[NSMutableArray alloc]init];
-//    NSArray *tempAllKTActiveStopsOnRoute = [self loadAllActiveTripStopsForRoute:route];
-//    
-//    // check tempAllKTActiveStopsOnRoute for each direction
-//    
-//    for (KTActiveTripStop *stop in tempAllKTActiveStopsOnRoute) {
-//        if ([stop.direction isEqualToString:@"NORTH"]) {
-//            [northBoundStops addObject:stop];
-//        }
-//        if ([stop.direction isEqualToString:@"SOUTH"]) {
-//            [southBoundStops addObject:stop];
-//        }
-//        if ([stop.direction isEqualToString:@"EAST"]) {
-//            [eastBoundStops addObject:stop];
-//        }
-//        if ([stop.direction isEqualToString:@"WEST"]) {
-//            [westBoundStops addObject:stop];
-//        }
-//    }
-//    
-//    
-//    if ([northBoundStops count] > 0) {
-//        [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:northBoundStops]];
-//    }
-//    if ([southBoundStops count] > 0) {
-//        [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:southBoundStops]];
-//    }
-//    if ([eastBoundStops count] > 0) {
-//        [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:eastBoundStops]];
-//    }
-//    if ([westBoundStops count] > 0) {
-//        [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:westBoundStops]];
-//    }
-//    return closestStops;
-//}
