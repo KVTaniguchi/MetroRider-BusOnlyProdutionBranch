@@ -414,7 +414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Rq2-Lu-9kh"/>
                     </layoutGuides>
                     <view key="view" hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ihk-qn-Idd">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSS-L8-mvv">
@@ -484,7 +484,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7NA-FQ-gHg"/>
                     </layoutGuides>
                     <view key="view" hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AmS-kl-Qjn">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="290"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Chose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUH-eu-c7I">
@@ -552,11 +552,11 @@
                         <viewControllerLayoutGuide type="bottom" id="NC8-D3-FAS"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Lrk-G4-dEy">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="88"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Added To Favorites" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y1D-eM-b60">
-                                <rect key="frame" x="0.0" y="14" width="300" height="59"/>
+                                <rect key="frame" x="0.0" y="14" width="320" height="539"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>

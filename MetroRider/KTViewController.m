@@ -23,8 +23,6 @@
     NSTimer *timer;
 }
 
-@synthesize rideIDTextField, containerViewForCVC, initialProgressIndicatorView;
-
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self setUpTheProgressView];
@@ -313,8 +311,8 @@
     [initialProgressMRCirc setProgress:1.5f animated:YES];
     [initialProgressMRCirc setProgressArcWidth:40];
     [initialProgressMRCirc setProgressColor:[UIColor orangeColor]];
-    [initialProgressIndicatorView addSubview:initialProgressMRCirc];
-    [self.view addSubview:initialProgressIndicatorView];
+    [_initialProgressIndicatorView addSubview:initialProgressMRCirc];
+    [self.view addSubview:_initialProgressIndicatorView];
     [UIView animateWithDuration:1.5 animations:^{
         [self.initialProgressIndicatorView setAlpha:0.0];
     } completion:^(BOOL finished) {

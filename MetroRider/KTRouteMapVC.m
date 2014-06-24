@@ -227,25 +227,15 @@
             NSInteger distanceFromWrongStop = [location distanceFromLocation:wrongStopLoc];
             if (distanceFromWrongStop < 50) {
                 if (_firstWrongWayAlert == NO) {
-                    static dispatch_once_t onceToken;
-                    dispatch_once(&onceToken, ^{
-                        [KTNotifyStop _sendWrongWayAlert];
-                        _firstWrongWayAlert = YES;
-                    });
+                    [KTNotifyStop _sendWrongWayAlert];
                 }
                 if (_secondWrongWayAlert == NO) {
-                    static dispatch_once_t secondToken;
-                    dispatch_once(&secondToken, ^{
-                        [KTNotifyStop _sendWrongWayAlert];
-                        _secondWrongWayAlert = YES;
-                    });
+                    [KTNotifyStop _sendWrongWayAlert];
+                    _secondWrongWayAlert = YES;
                 }
                 if (_thirdWrongWayAlert == NO) {
-                    static dispatch_once_t thirdToken;
-                    dispatch_once(&thirdToken, ^{
-                        [KTNotifyStop _sendWrongWayAlert];
-                        _thirdWrongWayAlert = YES;
-                    });
+                    [KTNotifyStop _sendWrongWayAlert];
+                    _thirdWrongWayAlert = YES;
                 }
             }
         }

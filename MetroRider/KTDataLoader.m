@@ -7,12 +7,7 @@
 //
 #import "KTDataLoader.h"
 
-static NSString *railLinesDataURL = @"http://api.wmata.com/Rail.svc/json/jLines?api_key=kfgpmgvfgacx98de9q3xazww";
-static NSString *stationsForLineURL = @"http://api.wmata.com/Rail.svc/json/jStations?LineCode=RD&api_key=nhs8f5mgyvbcstvyest37h55";
-// @"http://api.wmata.com/Bus.svc/json/jStops?lat=%f&lon=%f&radius=1000&api_key=nhs8f5mgyvbcstvyest37h55"
-
 @implementation KTDataLoader
-@synthesize ktDataLoaderDelegate, uniqueRoutesCloseToUser, numOfUniqueRoutesCloseToUser, allMetroBusRoutes, hasConnection;
 
 -(void)findBusRouteGivenLatLon:(float)lat andLong:(float)lon{
     static NSURLSession *findSession = nil;
@@ -41,7 +36,6 @@ static NSString *stationsForLineURL = @"http://api.wmata.com/Rail.svc/json/jStat
             self.numOfUniqueRoutesCloseToUser = [NSNumber numberWithInteger:[self.uniqueRoutesCloseToUser count]];
         }
     }];
-        
     [dataTask resume];
 }
 
@@ -164,8 +158,5 @@ static NSString *stationsForLineURL = @"http://api.wmata.com/Rail.svc/json/jStat
     }];
     [datatask resume];
 }
-
-
-
 
 @end
