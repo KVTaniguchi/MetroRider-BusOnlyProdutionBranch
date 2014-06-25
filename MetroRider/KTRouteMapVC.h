@@ -28,12 +28,8 @@
 
 @interface KTRouteMapVC : UIViewController <TripMonitorDelegate, CLLocationManagerDelegate, MKMapViewDelegate, KTAnnotationViewDelegate, UIAlertViewDelegate, StopInfoCallOutDelegate, ChosenStopVCDelegate, UIGestureRecognizerDelegate>
 {
-    CLLocationManager *locationManager;
     CLGeocoder *geoCoder;
-    BOOL tripMonitoringActive;
     int routeForUserToSelectCount;
-    Stop *selectedStop;
-    NSMutableArray *tripSessionStops;
     MKPolygon *routeShapePolygon;
     MKOverlayRenderer *overLayRenderer;
     NSMutableArray *stopAnnotations;
@@ -45,6 +41,7 @@
     KTAnnotationView *selectedAnnotationView;
     FavoriteCallOutVC *favoritedStopVC;
 }
+
 @property (nonatomic) BOOL tripMonitoringActive;
 @property (nonatomic) BOOL favoriteStopActive;
 @property (nonatomic) BOOL startOver;
@@ -63,7 +60,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *routeLabel;
 - (IBAction)backButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *chooseAStopLabel;
-
 @property (nonatomic,strong) CLLocationManager *locationManager;
 @property (nonatomic,strong) CLPlacemark *destinationPlacemark;
 @property (nonatomic,strong) CLPlacemark *searchedPlacemark;
@@ -75,16 +71,13 @@
 @property (nonatomic,strong) NSString *chosenStopID;
 @property (nonatomic,strong) NSMutableArray *tripSessionStops;
 @property (nonatomic,strong) NSArray *stopsInWrongDirection;
-
 @property (nonatomic,strong) CLCircularRegion *lastStopRegion;
 @property (nonatomic,strong) CLCircularRegion *destinationStopRegion;
-
 @property (strong, nonatomic) IBOutlet UIButton *searchButton;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UIButton *userLocButton;
 - (IBAction)userLocButtonPressed:(id)sender;
 - (IBAction)searchForLocationButtonPressed:(id)sender;
-
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 @property (strong, nonatomic) IBOutlet UIView *userChoseStopContainer;
 @property (strong, nonatomic) IBOutlet UIView *favoriteChosenContainer;

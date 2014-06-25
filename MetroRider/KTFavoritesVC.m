@@ -54,7 +54,6 @@
             ktFavoriteRouteMapVC.selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopID:self.favoriteStopChosen.stopID andRoute:self.favoriteStopChosen.route];
             ktFavoriteRouteMapVC.chosenStopID = [NSString stringWithFormat:@"%@",self.favoriteStopChosen.stopID];
             ktFavoriteRouteMapVC.route = [NSString stringWithFormat:@"%@",self.favoriteStopChosen.route];
-//            NSLog(@"the favorite stop selected is: stopID %@ stopName %@ sequence %@ lat %@ lon %@ dir %@", ktFavoriteRouteMapVC.selectedStop.stopID, ktFavoriteRouteMapVC.selectedStop.stopName, ktFavoriteRouteMapVC.selectedStop.sequence, ktFavoriteRouteMapVC.selectedStop.latitude, ktFavoriteRouteMapVC.selectedStop.longitude, ktFavoriteRouteMapVC.selectedStop.direction);
         });
     }
 }

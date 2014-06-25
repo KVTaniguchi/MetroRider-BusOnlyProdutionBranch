@@ -15,19 +15,18 @@
 @end
 
 @implementation KTRouteMapVC
-@synthesize tripMonitor, destinationLocation, destinationPlacemark, currentLocation, map, route, lastStopRegion, locationManager, selectedStop, tripSessionStops, tripMonitoringActive, backButton, userLocButton, searchButton, containerView, userChoseStopContainer, routeLabel, favoriteChosenContainer, favoriteStopActive, chosenStopID, startOver, searchedPlacemark, layMapWithPlacemark, searchedPlacemarktext;
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     UserLoc *u = [[KTRouteStopStore sharedStore]fetchUserLoc];
     if (self.layMapWithPlacemark == NO) {
         CLLocationCoordinate2D userCoord = CLLocationCoordinate2DMake([u.latitude doubleValue], [u.longitude doubleValue]);
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userCoord, 1.1*METERS_PER_MILE, 1.1*METERS_PER_MILE);
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userCoord, 1.1 * METERS_PER_MILE, 1.1 * METERS_PER_MILE);
         [self.map setRegion:region animated:NO];
         [self.map setDelegate:self];
     }else{
         CLLocationCoordinate2D selectedPlacemarkCoord = CLLocationCoordinate2DMake(self.searchedPlacemark.location.coordinate.latitude, self.searchedPlacemark.location.coordinate.longitude);
-        MKCoordinateRegion searchedRegion = MKCoordinateRegionMakeWithDistance(selectedPlacemarkCoord, 1.1*METERS_PER_MILE, 1.1*METERS_PER_MILE);
+        MKCoordinateRegion searchedRegion = MKCoordinateRegionMakeWithDistance(selectedPlacemarkCoord, 1.1 * METERS_PER_MILE, 1.1 * METERS_PER_MILE);
         [self.map setRegion:searchedRegion animated:YES];
         [self.map setDelegate:self];
     }
@@ -55,7 +54,7 @@
         [self laySearchedPlacemarkAnnotation];
     }
     if (self.favoriteStopActive == YES) {
-        [self trackFavoriteStop:self.selectedStop.stopID route:route];
+        [self trackFavoriteStop:_selectedStop.stopID route:_route];
         [self beginTripSession];
     }
 }
@@ -145,8 +144,8 @@
 -(void)beginTripSession{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.tripSessionStops = [[NSMutableArray alloc]init];
-        locationManager = [[CLLocationManager alloc]init];
-        locationManager.delegate = self;
+        _locationManager = [[CLLocationManager alloc]init];
+        _locationManager.delegate = self;
         [self.locationManager startUpdatingLocation];
         [self.locationManager allowDeferredLocationUpdatesUntilTraveled:100 timeout:1];
         [self.locationManager setPausesLocationUpdatesAutomatically:YES];
@@ -174,7 +173,7 @@
 
 -(void)layStopsForRoute{
     NSArray *closestStops = [self.tripMonitor getCloseActiveTripStopsForRoute:self.route withLocation:self.currentLocation];
-    tripSessionStops = [NSMutableArray arrayWithArray:[self stopsToPlaceinRelationToClosestStops:closestStops]];
+    _tripSessionStops = [NSMutableArray arrayWithArray:[self stopsToPlaceinRelationToClosestStops:closestStops]];
     NSArray *allStopsOnRoute = [[KTRouteStopStore sharedStore]fetchAllStopsForRoute:self.route];
     if ([allStopsOnRoute count] < 1) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -190,7 +189,7 @@
         ann.stopID = stop.stopID;
         ann.direction = stop.direction;
         if (self.favoriteStopActive == YES) {
-            if ([ann.stopID isEqualToString:self.selectedStop.stopID] && [ann.stopName isEqualToString:self.selectedStop.stopName]) {
+            if ([ann.stopID isEqualToString:_selectedStop.stopID] && [ann.stopName isEqualToString:_selectedStop.stopName]) {
                 ann.isFavorite = YES;
             }
         }
@@ -241,12 +240,12 @@
         }
     }
     if (distanceFromDest < 2000 && _twoKFired == NO) {
-        tripSessionStops = [NSMutableArray arrayWithArray:[tripMonitor findNextStopsTillDestinationGivenCurrentLocation:location andFinalStop:selectedStop]];
+        _tripSessionStops = [NSMutableArray arrayWithArray:[_tripMonitor findNextStopsTillDestinationGivenCurrentLocation:location andFinalStop:_selectedStop]];
         _twoKFired = YES;
     }
     if (distanceFromDest < 800 && _eightHundredFired == NO) {
-        [locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
-        [self.tripMonitor checkClosestActiveStopToLocation:location withTripSessionStops:tripSessionStops];
+        [_locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+        [self.tripMonitor checkClosestActiveStopToLocation:location withTripSessionStops:_tripSessionStops];
         _eightHundredFired = YES;
         _wrongWayPossibleFlag = NO;
     }
@@ -267,7 +266,7 @@
     if ([region.identifier isEqualToString:@"destinationStopRegion"]) {
         [KTNotifyStop _sendBusStopDidEnterLastStopRegion];
         [KTNotifyStop _sendBusStopApproachingLocalNotificationNextStop];
-        [locationManager stopMonitoringForRegion:lastStopRegion];
+        [_locationManager stopMonitoringForRegion:_lastStopRegion];
     }
 }
 
@@ -276,17 +275,17 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:@YES forKey:@"tripEnded"];
         [defaults synchronize];
-        [locationManager stopUpdatingLocation];
+        [_locationManager stopUpdatingLocation];
     });
 }
 
 -(void)initStopRegions{
-    CLLocation *selectedStopLocation = [[CLLocation alloc]initWithLatitude:[selectedStop.latitude floatValue] longitude:[selectedStop.longitude floatValue]];
+    CLLocation *selectedStopLocation = [[CLLocation alloc]initWithLatitude:[_selectedStop.latitude floatValue] longitude:[_selectedStop.longitude floatValue]];
     CLLocation *finalStopFromLocation = [[CLLocation alloc]initWithLatitude:[self.tripMonitor.lastStopFromDest.latitude floatValue] longitude:[self.tripMonitor.lastStopFromDest.longitude floatValue]];
     CLLocationDistance lastStopToFinalStopDistance = [selectedStopLocation distanceFromLocation:finalStopFromLocation];
     self.lastStopRegion = [[CLCircularRegion alloc]initWithCenter:self.destinationLocation.coordinate radius:lastStopToFinalStopDistance identifier:@"destinationStopRegion"];
     
-    [locationManager startMonitoringForRegion:self.lastStopRegion];
+    [_locationManager startMonitoringForRegion:self.lastStopRegion];
 }
 
 -(MKAnnotationView*)mapView:(MKMapView *)mapView viewForAnnotation:(KTAnnotationPoint*)annotation{
@@ -342,14 +341,14 @@
         [view setKTAnnotationViewImageForAnnotation:annotation];
     }
     if(self.tripMonitoringActive == YES){
-        [locationManager stopUpdatingLocation];
+        [_locationManager stopUpdatingLocation];
     }
 }
 
 -(void)annotationDestinationStopChosenWithStopName:(NSString *)stopName route:(NSString *)rout stopID:(NSString *)ID direction:(NSString *)dir{
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.selectedStop.route = rout;
-        self.selectedStop.direction = dir;
+        _selectedStop.route = rout;
+        _selectedStop.direction = dir;
         [self.containerView setHidden:NO];
         stopInfoCallOutVC.route.text = rout;
         stopInfoCallOutVC.stopName.text = stopName;
@@ -369,28 +368,28 @@
 
 -(void)finalDestinationStopChosen:(NSString *)stopID stopName:(NSString *)name direction:(NSString *)dir route:(NSString *)rout sequence:(NSNumber*)seq{
     [self resetDistanceFlags];
-    [locationManager startUpdatingLocation];
+    [_locationManager startUpdatingLocation];
     self.tripMonitoringActive = YES;
     [self.tripMonitor startMotionTracking];
     if ([stopID isEqualToString:@"0"]) {
-        self.selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopName:name andRoute:self.route direction:dir];
+        _selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopName:name andRoute:self.route direction:dir];
     }else{
-        self.selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopID:stopID];
+        _selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopID:stopID];
     }
-    self.destinationLocation = [[CLLocation alloc]initWithLatitude:[self.selectedStop.latitude floatValue] longitude:[self.selectedStop.longitude floatValue]];
-    [self.tripMonitor findLastThreeActiveStopsToDestination:self.selectedStop GivenCurrentLocation:self.currentLocation :^(BOOL finished){
+    self.destinationLocation = [[CLLocation alloc]initWithLatitude:[_selectedStop.latitude floatValue] longitude:[_selectedStop.longitude floatValue]];
+    [self.tripMonitor findLastThreeActiveStopsToDestination:_selectedStop GivenCurrentLocation:self.currentLocation :^(BOOL finished){
         if (finished) {
             [self initStopRegions];
         }
     }];
-    _stopsInWrongDirection = [NSArray arrayWithArray:[self.tripMonitor findStopsIntheWrongDirectionGivenCurrentLocation:self.currentLocation andFinalStop:self.selectedStop]];
+    _stopsInWrongDirection = [NSArray arrayWithArray:[self.tripMonitor findStopsIntheWrongDirectionGivenCurrentLocation:self.currentLocation andFinalStop:_selectedStop]];
     if ([_stopsInWrongDirection count] < 1) {
         _wrongWayPossibleFlag = NO;
     }else {
         _wrongWayPossibleFlag = YES;
     }
     [self.userChoseStopContainer setHidden:NO];
-    chosenStopVC.stopAddressTextView.text = self.selectedStop.stopName;
+    chosenStopVC.stopAddressTextView.text = _selectedStop.stopName;
     chosenStopVC.route.text = self.route;
     [chosenStopVC.view setHidden:NO];
     [self.userChoseStopContainer setAlpha:0.0f];
@@ -421,7 +420,7 @@
     [self resetWrongWayAlergFlags];
     _stopsInWrongDirection = nil;
     if (self.tripMonitoringActive == YES) {
-        [locationManager stopUpdatingLocation];
+        [_locationManager stopUpdatingLocation];
     }
     [UIView animateWithDuration:.5 animations:^{
         [self.containerView setAlpha:0.0f];
@@ -482,12 +481,12 @@
 }
 
 -(void)trackFavoriteStop:(NSString*)stopID route:(NSString*)route{
-    CLLocationCoordinate2D favoriteStopCoord = CLLocationCoordinate2DMake([self.selectedStop.latitude floatValue], [self.selectedStop.longitude floatValue]);
+    CLLocationCoordinate2D favoriteStopCoord = CLLocationCoordinate2DMake([_selectedStop.latitude floatValue], [_selectedStop.longitude floatValue]);
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(favoriteStopCoord, 1.1*METERS_PER_MILE, 1.1*METERS_PER_MILE);
     [self.map setRegion:region animated:YES];
     [self.map setDelegate:self];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self finalDestinationStopChosen:self.selectedStop.stopID stopName:self.selectedStop.stopName direction:self.selectedStop.direction route:self.selectedStop.route sequence:self.selectedStop.sequence];
+        [self finalDestinationStopChosen:_selectedStop.stopID stopName:_selectedStop.stopName direction:_selectedStop.direction route:_selectedStop.route sequence:_selectedStop.sequence];
         [self layStopsForRoute];
     });
 }
@@ -505,10 +504,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"leftToRight"]) {
-        [locationManager stopMonitoringForRegion:lastStopRegion];
-        [locationManager stopUpdatingLocation];
-        [locationManager stopMonitoringSignificantLocationChanges];
-        locationManager = nil;
+        [_locationManager stopMonitoringForRegion:_lastStopRegion];
+        [_locationManager stopUpdatingLocation];
+        [_locationManager stopMonitoringSignificantLocationChanges];
+        _locationManager = nil;
         [self.map removeFromSuperview];
         [self.view removeFromSuperview];
     }
@@ -531,7 +530,7 @@
 -(void)restart{
     [self resetDistanceFlags];
     [self resetWrongWayAlergFlags];
-    [locationManager stopUpdatingLocation];
+    [_locationManager stopUpdatingLocation];
     UINavigationController *nav = [[self storyboard]instantiateViewControllerWithIdentifier:@"navController"];
     [self presentViewController:nav animated:YES completion:nil];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
