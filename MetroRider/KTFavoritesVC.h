@@ -14,7 +14,6 @@
 @interface KTFavoritesVC : UIViewController <UITableViewDelegate>
 - (IBAction)backButtonPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
-
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 @property (nonatomic,strong) NSMutableArray *favoriteStops;
 @property (nonatomic,strong) Stop *favoriteStopChosen;

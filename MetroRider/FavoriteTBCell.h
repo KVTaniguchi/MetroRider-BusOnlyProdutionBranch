@@ -12,6 +12,5 @@
 @property (strong, nonatomic) IBOutlet UITextView *routeAddress;
 @property (strong, nonatomic) IBOutlet UILabel *routeLabel;
 @property (strong, nonatomic) IBOutlet UITextView *userTitle;
-
 @property (strong, nonatomic) NSString *stopID;
 @end
