@@ -15,7 +15,6 @@
 @end
 
 @implementation KTFavoritesVC
-@synthesize favoriteStops, favoriteRoutes;
 
 -(id)init{
     self = [super init];

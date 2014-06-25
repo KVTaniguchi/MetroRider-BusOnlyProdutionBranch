@@ -151,7 +151,6 @@
         [self.locationManager setPausesLocationUpdatesAutomatically:YES];
         [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
         self.tripMonitor = [[TripMonitor alloc]init];
-        self.tripMonitor.tripMonitorDelegate = self;
     });
 }
 
@@ -241,7 +240,7 @@
     }
     if (distanceFromDest < 2000 && _twoKFired == NO) {
         _tripSessionStops = [NSMutableArray arrayWithArray:[_tripMonitor findNextStopsTillDestinationGivenCurrentLocation:location andFinalStop:_selectedStop]];
-        _twoKFired = YES;
+        self.twoKFired = YES;
     }
     if (distanceFromDest < 800 && _eightHundredFired == NO) {
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
@@ -370,7 +369,7 @@
     [self resetDistanceFlags];
     [_locationManager startUpdatingLocation];
     self.tripMonitoringActive = YES;
-    [self.tripMonitor startMotionTracking];
+//    [self.tripMonitor startMotionTracking];
     if ([stopID isEqualToString:@"0"]) {
         _selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopName:name andRoute:self.route direction:dir];
     }else{
@@ -538,16 +537,6 @@
     [defaults synchronize];
 }
 
--(void)reportUserMotionType:(NSString *)motionType{
-    if ([motionType isEqualToString:@"Walking"]) {
-       // [locationManager stopUpdatingLocation];
-        NSLog(@"walking");
-    }
-    if ([motionType isEqualToString:@"Vehicle"]) {
-       // [locationManager startUpdatingLocation];
-        NSLog(@"vehicle");
-    }
-}
 
 - (IBAction)backButtonPressed:(id)sender {
     if (self.startOver == NO) {

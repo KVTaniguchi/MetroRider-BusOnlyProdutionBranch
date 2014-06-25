@@ -9,30 +9,6 @@
 #import "TripMonitor.h"
 
 @implementation TripMonitor
-@synthesize motion, motionType, tripMonitorDelegate, thirdStopFromDest, secondStopFromDest, lastStopFromDest;
-
--(void)startMotionTracking{
-    CMMotionActivityManager *motionActivityManager = [[CMMotionActivityManager alloc]init];
-    if ([CMMotionActivityManager isActivityAvailable]){
-        NSOperationQueue *opsQueue = [NSOperationQueue currentQueue];
-        [motionActivityManager startActivityUpdatesToQueue:opsQueue withHandler:^(CMMotionActivity *activity) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (activity.automotive) {
-                    self.motionType = @"Vehicle";
-                    [[self tripMonitorDelegate] reportUserMotionType:self.motionType];
-                }
-                if (activity.walking) {
-                    self.motionType = @"Walking";
-                    [[self tripMonitorDelegate] reportUserMotionType:self.motionType];
-                }
-                if (activity.unknown) {
-                    self.motionType = @"Unknown";
-                    [[self tripMonitorDelegate] reportUserMotionType:self.motionType];
-                }
-            });
-        }];
-    }
-}
 
 -(NSMutableArray*)loadAllActiveTripStopsForRoute:(NSString*)route{
     NSArray *allStopsOnDestRoute = [[KTRouteStopStore sharedStore]fetchAllStopsForRoute:route];
@@ -58,8 +34,6 @@
     NSMutableArray *westBoundStops = [[NSMutableArray alloc]init];
     NSMutableArray *closestStops = [[NSMutableArray alloc]init];
     NSArray *tempAllKTActiveStopsOnRoute = [self loadAllActiveTripStopsForRoute:route];
-
-    // check tempAllKTActiveStopsOnRoute for each direction
   
     for (KTActiveTripStop *stop in tempAllKTActiveStopsOnRoute) {
         if ([stop.direction isEqualToString:@"NORTH"]) {
@@ -76,7 +50,6 @@
         }
     }
 
-    
     if ([northBoundStops count] > 0) {
         [closestStops addObject:[self getClosestStopToUserLoc:userLoc WithStops:northBoundStops]];
     }
@@ -239,7 +212,6 @@
     int finalStopSeqNum = [finalStop.sequence intValue];
     for (KTActiveTripStop *actStop in activeStops) {
         int actStopSeqNum = [actStop.routeSequence intValue];
-        // we want to add stops that have a greater seqnum than closeststop but less than final stop
         if (actStopSeqNum > closestActiveStopSeqNum && actStopSeqNum < finalStopSeqNum) {
             [self.closestActiveStops addObject:actStop];
         }

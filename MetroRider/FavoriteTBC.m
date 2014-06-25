@@ -18,7 +18,6 @@
 @end
 
 @implementation FavoriteTBC
-@synthesize favoriteStops, favoriteStopChosen, favoriteRoutes;
 
 - (void)viewDidLoad
 {

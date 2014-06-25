@@ -26,7 +26,7 @@
 #import "FavoriteCallOutVC.h"
 #import "KTMapSearchVC.h"
 
-@interface KTRouteMapVC : UIViewController <TripMonitorDelegate, CLLocationManagerDelegate, MKMapViewDelegate, KTAnnotationViewDelegate, UIAlertViewDelegate, StopInfoCallOutDelegate, ChosenStopVCDelegate, UIGestureRecognizerDelegate>
+@interface KTRouteMapVC : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, KTAnnotationViewDelegate, UIAlertViewDelegate, StopInfoCallOutDelegate, ChosenStopVCDelegate, UIGestureRecognizerDelegate>
 {
     CLGeocoder *geoCoder;
     int routeForUserToSelectCount;

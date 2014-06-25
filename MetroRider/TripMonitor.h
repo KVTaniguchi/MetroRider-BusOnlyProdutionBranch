@@ -17,10 +17,6 @@
     
 */
 @class TripMonitor;
-@protocol TripMonitorDelegate <NSObject>
-@required
--(void)reportUserMotionType:(NSString*)motionType;
-@end
 
 #import <Foundation/Foundation.h>
 @import CoreMotion;
@@ -36,8 +32,6 @@ typedef void(^myCompletion)(BOOL);
 
 
 @interface TripMonitor : NSObject
-@property (nonatomic,weak) id <TripMonitorDelegate> tripMonitorDelegate;
-
 @property (nonatomic,strong) CMDeviceMotion *motion;
 @property (nonatomic,strong) NSString *motionType;
 @property (nonatomic,strong) NSMutableArray *closestActiveStops;
@@ -46,9 +40,6 @@ typedef void(^myCompletion)(BOOL);
 @property (nonatomic,strong) KTActiveTripStop *secondStopFromDest;
 @property (nonatomic,strong) KTActiveTripStop *lastStopFromDest;
 @property (nonatomic,strong) NSArray *stopsInWrongDirection;
-
-
--(void)startMotionTracking;
 -(NSArray*)findNextStopsTillDestinationGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop;
 -(void)checkClosestActiveStopToLocation:(CLLocation*)currentLocation withTripSessionStops:(NSMutableArray*)activeTripStops;
 -(NSArray*)getCloseActiveTripStopsForRoute:(NSString*)route withLocation:(CLLocation*)userLoc;
