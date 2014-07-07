@@ -39,11 +39,9 @@ typedef void(^myCompletion)(BOOL);
 @property (nonatomic,strong) KTActiveTripStop *thirdStopFromDest;
 @property (nonatomic,strong) KTActiveTripStop *secondStopFromDest;
 @property (nonatomic,strong) KTActiveTripStop *lastStopFromDest;
-@property (nonatomic,strong) NSArray *stopsInWrongDirection;
 -(NSArray*)findNextStopsTillDestinationGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop;
 -(void)checkClosestActiveStopToLocation:(CLLocation*)currentLocation withTripSessionStops:(NSMutableArray*)activeTripStops;
 -(NSArray*)getCloseActiveTripStopsForRoute:(NSString*)route withLocation:(CLLocation*)userLoc;
 //-(NSArray*)findLastThreeActiveStopsToDestination:(Stop*)finalStop GivenCurrentLocation:(CLLocation*)currentLocation;
 -(void)findLastThreeActiveStopsToDestination:(Stop*)finalStop GivenCurrentLocation:(CLLocation*)currentLocation :(myCompletion)compBlock;
--(NSArray*)findStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop;
 @end

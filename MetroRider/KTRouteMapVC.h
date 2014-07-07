@@ -70,7 +70,6 @@
 @property (nonatomic,strong) Stop *selectedStop;
 @property (nonatomic,strong) NSString *chosenStopID;
 @property (nonatomic,strong) NSMutableArray *tripSessionStops;
-@property (nonatomic,strong) NSArray *stopsInWrongDirection;
 @property (nonatomic,strong) CLCircularRegion *lastStopRegion;
 @property (nonatomic,strong) CLCircularRegion *destinationStopRegion;
 @property (strong, nonatomic) IBOutlet UIButton *searchButton;

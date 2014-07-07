@@ -220,23 +220,7 @@
 -(void)calculateDistanceFromCurrentLocation:(CLLocation*)location toDestinationLoc:(CLLocation*)destLoc{
     NSInteger distanceFromDest =  [location distanceFromLocation:destLoc];
     if (_wrongWayPossibleFlag == YES) {
-        for (Stop *stop in _stopsInWrongDirection) {
-            CLLocation *wrongStopLoc = [[CLLocation alloc]initWithLatitude:[stop.latitude doubleValue] longitude:[stop.longitude doubleValue]];
-            NSInteger distanceFromWrongStop = [location distanceFromLocation:wrongStopLoc];
-            if (distanceFromWrongStop < 50) {
-                if (_firstWrongWayAlert == NO) {
-                    [KTNotifyStop _sendWrongWayAlert];
-                }
-                if (_secondWrongWayAlert == NO) {
-                    [KTNotifyStop _sendWrongWayAlert];
-                    _secondWrongWayAlert = YES;
-                }
-                if (_thirdWrongWayAlert == NO) {
-                    [KTNotifyStop _sendWrongWayAlert];
-                    _thirdWrongWayAlert = YES;
-                }
-            }
-        }
+        // TO DO: check to see if distance to the target is getting greater or smaller by comparing against previous distances
     }
     if (distanceFromDest < 2000 && _twoKFired == NO) {
         _tripSessionStops = [NSMutableArray arrayWithArray:[_tripMonitor findNextStopsTillDestinationGivenCurrentLocation:location andFinalStop:_selectedStop]];
@@ -381,12 +365,6 @@
             [self initStopRegions];
         }
     }];
-    _stopsInWrongDirection = [NSArray arrayWithArray:[self.tripMonitor findStopsIntheWrongDirectionGivenCurrentLocation:self.currentLocation andFinalStop:_selectedStop]];
-    if ([_stopsInWrongDirection count] < 1) {
-        _wrongWayPossibleFlag = NO;
-    }else {
-        _wrongWayPossibleFlag = YES;
-    }
     [self.userChoseStopContainer setHidden:NO];
     chosenStopVC.stopAddressTextView.text = _selectedStop.stopName;
     chosenStopVC.route.text = self.route;
@@ -417,7 +395,6 @@
 -(void)chooseAnotherStop{
     [self resetDistanceFlags];
     [self resetWrongWayAlergFlags];
-    _stopsInWrongDirection = nil;
     if (self.tripMonitoringActive == YES) {
         [_locationManager stopUpdatingLocation];
     }

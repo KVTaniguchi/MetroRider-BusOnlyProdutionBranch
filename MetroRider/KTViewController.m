@@ -147,7 +147,6 @@
     [[KTRouteStopStore sharedStore]saveChanges];
 }
 
-
 -(void)searchForRoutesCloseToUser{
     if (_collectionViewHasBeenUpdated == NO && _reloadRoutesButtonPressed == NO) {
         if ([self doesStoreHaveRoutesForLocation:self.currentLocation] == YES) {
@@ -236,7 +235,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [collectionViewController.collectionView flashScrollIndicators];
     });
-
 }
 
 -(void)scrollSlowly{
@@ -264,7 +262,6 @@
     _dataHasBeenFetched = NO;
     _reloadRoutesButtonPressed = YES;
     [self checkUserLocation];
-    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -315,7 +312,7 @@
     [self.view addSubview:_initialProgressIndicatorView];
     [UIView animateWithDuration:1.5 animations:^{
         [self.initialProgressIndicatorView setAlpha:0.0];
-    } completion:^(BOOL finished) {
+    } completion:^(BOOL finished){
         if (finished) {
             [self.initialProgressIndicatorView setHidden:YES];
             [self.initialProgressIndicatorView removeFromSuperview];

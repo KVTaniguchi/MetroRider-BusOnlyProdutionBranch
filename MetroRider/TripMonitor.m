@@ -96,32 +96,6 @@
     return closestActiveStop;
 }
 
--(NSArray*)findStopsIntheWrongDirectionGivenCurrentLocation:(CLLocation*)currentLocation andFinalStop:(Stop*)finalStop{
-    NSArray *allStopsOnDestRoute = [[KTRouteStopStore sharedStore]fetchStopsForRoute:finalStop.route andDirection:finalStop.direction];
-    int min = 1000;
-    NSString *closestSeq = [NSString new];
-    for (Stop *stop in allStopsOnDestRoute) {
-        CLLocation *stopLoc = [[CLLocation alloc]initWithLatitude:[stop.latitude doubleValue] longitude:[stop.longitude doubleValue]];
-        CLLocationDistance distance = [currentLocation distanceFromLocation:stopLoc];
-        if (distance < min) {
-            min = distance;
-            closestSeq = [NSString stringWithFormat:@"%@", stop.sequence];
-        }
-    }
-    if([closestSeq intValue] < 1){
-        return nil;
-        NSLog(@"should return nil");
-    }
-    NSMutableArray *stopsWithLowerSequencesThanClosestStop = [NSMutableArray new];
-    for (Stop *stop in allStopsOnDestRoute) {
-        if ([stop.sequence intValue] < [closestSeq intValue]) {
-            [stopsWithLowerSequencesThanClosestStop addObject:stop];
-        }
-    }
-    _stopsInWrongDirection = [NSArray arrayWithArray:stopsWithLowerSequencesThanClosestStop];
-    return stopsWithLowerSequencesThanClosestStop;
-}
-
 -(void)checkClosestActiveStopToLocation:(CLLocation*)currentLocation withTripSessionStops:(NSMutableArray*)activeTripStops{
     self.closestActiveStop = [self getClosestActiveTripStop:self.closestActiveStops currentLocation:currentLocation inDistance:1000];
 }
