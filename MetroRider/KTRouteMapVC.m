@@ -35,7 +35,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self resetDistanceFlags];
-    [self resetWrongWayAlergFlags];
+    [self resetWrongWayAlertFlags];
     if (self.isViewLoaded && !self.view.window) {
         KTAppDelegate *ktAppDelegate = (KTAppDelegate*)[[UIApplication sharedApplication]delegate];
         [[ktAppDelegate window] addSubview:self.view];
@@ -66,7 +66,7 @@
     _oneHundredFired = NO;
 }
 
--(void)resetWrongWayAlergFlags{
+-(void)resetWrongWayAlertFlags{
     _firstWrongWayAlert = NO;
     _secondWrongWayAlert = NO;
     _thirdWrongWayAlert = NO;
@@ -151,6 +151,7 @@
         [self.locationManager setPausesLocationUpdatesAutomatically:YES];
         [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
         self.tripMonitor = [[TripMonitor alloc]init];
+        _tripMonitor.previousDistance = [NSNumber new];
     });
 }
 
@@ -219,8 +220,15 @@
 
 -(void)calculateDistanceFromCurrentLocation:(CLLocation*)location toDestinationLoc:(CLLocation*)destLoc{
     NSInteger distanceFromDest =  [location distanceFromLocation:destLoc];
+    NSLog(@"distance From Dest: %ld", (long)distanceFromDest);
+    
     if (_wrongWayPossibleFlag == YES) {
-        // TO DO: check to see if distance to the target is getting greater or smaller by comparing against previous distances
+        NSLog(@"wrong way possible checking distance");
+        [_tripMonitor checkIfUserGettingCloserToDestination:[NSNumber numberWithInteger:distanceFromDest]];
+        NSLog(@"trip monitors last distnace was: %@", _tripMonitor.previousDistance);
+        if ([_tripMonitor.wrongWayScore integerValue] > 20) {
+            [KTNotifyStop _sendWrongWayAlert];
+        }
     }
     if (distanceFromDest < 2000 && _twoKFired == NO) {
         _tripSessionStops = [NSMutableArray arrayWithArray:[_tripMonitor findNextStopsTillDestinationGivenCurrentLocation:location andFinalStop:_selectedStop]];
@@ -243,6 +251,8 @@
         _oneHundredFired = YES;
         [self tripOver];
     }
+    
+    // if the array is greater than 10 objects, remove last element
 }
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
@@ -394,7 +404,7 @@
 
 -(void)chooseAnotherStop{
     [self resetDistanceFlags];
-    [self resetWrongWayAlergFlags];
+    [self resetWrongWayAlertFlags];
     if (self.tripMonitoringActive == YES) {
         [_locationManager stopUpdatingLocation];
     }
@@ -479,6 +489,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [_tripMonitor resetTripMonitor];
     if ([segue.identifier isEqualToString:@"leftToRight"]) {
         [_locationManager stopMonitoringForRegion:_lastStopRegion];
         [_locationManager stopUpdatingLocation];
@@ -505,7 +516,8 @@
 
 -(void)restart{
     [self resetDistanceFlags];
-    [self resetWrongWayAlergFlags];
+    [self resetWrongWayAlertFlags];
+    _wrongWayPossibleFlag = YES;
     [_locationManager stopUpdatingLocation];
     UINavigationController *nav = [[self storyboard]instantiateViewControllerWithIdentifier:@"navController"];
     [self presentViewController:nav animated:YES completion:nil];

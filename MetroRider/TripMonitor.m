@@ -193,4 +193,37 @@
     return self.closestActiveStops;
 }
 
+
+// if the distanceFromDest > formerDistance.lastObject then the distance is increasing and may be going in wrong direction
+// then increase wrongWayScoreCount by 1 and wrong way flag is turned on
+
+// else the wrong way flag is turned off
+
+//if (_wrongWayPossibleFlag == YES) {
+    // TO DO: check to see if distance to the target is getting greater or smaller by comparing against previous distances
+    // if the distance to target is less than all the objects in the array then
+
+
+-(void)checkIfUserGettingCloserToDestination:(NSNumber *)currentDistance{
+    if (self.previousDistance == nil) {
+        self.previousDistance = currentDistance;
+        return;
+    }
+    if ([currentDistance integerValue] > [self.previousDistance integerValue]){
+        self.wrongWayScore = [NSNumber numberWithInteger:[self.wrongWayScore integerValue] + 1];
+    }
+}
+
+
+-(void)resetTripMonitor{
+    self.wrongWayScore = 0;
+    self.previousDistance = nil;
+}
+
+
+
+
+
+
+
 @end
