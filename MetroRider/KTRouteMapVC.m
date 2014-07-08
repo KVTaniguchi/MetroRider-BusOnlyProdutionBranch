@@ -221,12 +221,12 @@
 -(void)calculateDistanceFromCurrentLocation:(CLLocation*)location toDestinationLoc:(CLLocation*)destLoc{
     NSInteger distanceFromDest =  [location distanceFromLocation:destLoc];
     NSLog(@"distance From Dest: %ld", (long)distanceFromDest);
-    
+    NSLog(@"trip mon wrong way score: %@", _tripMonitor.wrongWayScore);
     if (_wrongWayPossibleFlag == YES) {
         NSLog(@"wrong way possible checking distance");
         [_tripMonitor checkIfUserGettingCloserToDestination:[NSNumber numberWithInteger:distanceFromDest]];
         NSLog(@"trip monitors last distnace was: %@", _tripMonitor.previousDistance);
-        if ([_tripMonitor.wrongWayScore integerValue] > 20) {
+        if ([_tripMonitor.wrongWayScore integerValue] > 50) {
             [KTNotifyStop _sendWrongWayAlert];
         }
     }
