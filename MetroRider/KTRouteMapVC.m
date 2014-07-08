@@ -363,6 +363,7 @@
     [self resetDistanceFlags];
     [_locationManager startUpdatingLocation];
     self.tripMonitoringActive = YES;
+    _wrongWayPossibleFlag = YES;
 //    [self.tripMonitor startMotionTracking];
     if ([stopID isEqualToString:@"0"]) {
         _selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopName:name andRoute:self.route direction:dir];
