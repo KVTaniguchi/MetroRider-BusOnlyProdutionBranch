@@ -152,7 +152,7 @@
         if ([self doesStoreHaveRoutesForLocation:self.currentLocation] == YES) {
             [self setUpCollectionView];
         }
-        else if(_dataHasBeenFetched == NO){
+        else if(!_dataHasBeenFetched){
             [self fetchWMATAAPIData]; 
         }
     }
