@@ -22,7 +22,7 @@
     return [self sharedStore];
 }
 
--(id)init{
+-(instancetype)init{
     self = [super init];
     if (self) {
         model = [NSManagedObjectModel mergedModelFromBundles:nil];

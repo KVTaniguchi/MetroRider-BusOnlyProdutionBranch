@@ -224,7 +224,7 @@
     NSLog(@"trip mon wrong way score: %@", _tripMonitor.wrongWayScore);
     if (_wrongWayPossibleFlag) {
         NSLog(@"wrong way possible checking distance");
-        [_tripMonitor checkIfUserGettingCloserToDestination:[NSNumber numberWithInteger:distanceFromDest]];
+        [_tripMonitor checkIfUserGettingCloserToDestination:@(distanceFromDest)];
         NSLog(@"trip monitors last distnace was: %@", _tripMonitor.previousDistance);
         if ([_tripMonitor.wrongWayScore integerValue] > 40) {
             [KTNotifyStop _sendWrongWayAlert];

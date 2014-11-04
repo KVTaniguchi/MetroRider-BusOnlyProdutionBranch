@@ -199,7 +199,7 @@
         return;
     }
     if ([currentDistance integerValue] > [self.previousDistance integerValue]){
-        self.wrongWayScore = [NSNumber numberWithInteger:[self.wrongWayScore integerValue] + 1];
+        self.wrongWayScore = @([self.wrongWayScore integerValue] + 1);
     }
 }
 

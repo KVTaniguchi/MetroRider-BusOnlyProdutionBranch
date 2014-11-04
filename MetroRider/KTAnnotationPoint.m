@@ -10,7 +10,7 @@
 
 @implementation KTAnnotationPoint
 @synthesize stopID,direction, stopName,route, isFavorite;
--(id)init{
+-(instancetype)init{
     self = [super init];
     return self;
 }
