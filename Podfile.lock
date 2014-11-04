@@ -11,6 +11,6 @@ DEPENDENCIES:
   - ReactiveCocoa (~> 2.3)
 
 SPEC CHECKSUMS:
-  ReactiveCocoa: dde7b11a14954edf789e7343b2c32e595caabd01
+  ReactiveCocoa: 2066583826c17dde8e90c41e489f682048cc57c9
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1

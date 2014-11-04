@@ -147,17 +147,16 @@
     [[KTRouteStopStore sharedStore]saveChanges];
 }
 
-
 -(void)searchForRoutesCloseToUser{
-    if (_collectionViewHasBeenUpdated == NO && _reloadRoutesButtonPressed == NO) {
+    if (!_collectionViewHasBeenUpdated && !_reloadRoutesButtonPressed) {
         if ([self doesStoreHaveRoutesForLocation:self.currentLocation] == YES) {
             [self setUpCollectionView];
         }
-        else if(_dataHasBeenFetched == NO){
+        else if(!_dataHasBeenFetched){
             [self fetchWMATAAPIData]; 
         }
     }
-    if (_reloadRoutesButtonPressed == YES && _dataHasBeenFetched == NO) {
+    if (_reloadRoutesButtonPressed && !_dataHasBeenFetched) {
         [self fetchWMATAAPIData];
         return;
     }
@@ -175,7 +174,7 @@
 
 -(void)fetchWMATAAPIData{
     [dataLoader findBusRouteGivenLatLon:self.currentLocation.coordinate.latitude andLong:self.currentLocation.coordinate.longitude];
-    if (dataLoader.hasConnection == YES) {
+    if (dataLoader.hasConnection) {
         if ([uniqueRoutesForUserToSelect count] < 1) {
             UIAlertView *notCloseToBusRouteAlertView = [[UIAlertView alloc]initWithTitle:@"Are you On A Bus?" message:@"You are not within 300 m of a bus stop or you are not on a bus.  Use this app when you are riding." delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [notCloseToBusRouteAlertView show];
@@ -187,9 +186,9 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
     if ([keyPath isEqualToString:@"numOfUniqueRoutesCloseToUser"]) {
         uniqueRoutesForUserToSelect = [NSSet setWithArray:[dataLoader.uniqueRoutesCloseToUser allObjects]];
-        if (_collectionViewHasBeenUpdated == NO) {
+        if (!_collectionViewHasBeenUpdated) {
             [self setUpCollectionView];
-        }else if (_reloadRoutesButtonPressed == YES){
+        }else if (_reloadRoutesButtonPressed){
             [self setUpCollectionView];
             _reloadRoutesButtonPressed = NO;
         }
@@ -236,7 +235,6 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [collectionViewController.collectionView flashScrollIndicators];
     });
-
 }
 
 -(void)scrollSlowly{
@@ -264,7 +262,6 @@
     _dataHasBeenFetched = NO;
     _reloadRoutesButtonPressed = YES;
     [self checkUserLocation];
-    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -315,7 +312,7 @@
     [self.view addSubview:_initialProgressIndicatorView];
     [UIView animateWithDuration:1.5 animations:^{
         [self.initialProgressIndicatorView setAlpha:0.0];
-    } completion:^(BOOL finished) {
+    } completion:^(BOOL finished){
         if (finished) {
             [self.initialProgressIndicatorView setHidden:YES];
             [self.initialProgressIndicatorView removeFromSuperview];

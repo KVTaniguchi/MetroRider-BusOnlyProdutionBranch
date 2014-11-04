@@ -4,7 +4,6 @@
 //
 //  Created by Kevin Taniguchi on 4/14/14.
 //  Copyright (c) 2014 Taniguchi. All rights reserved.
-//
 
 #import "KTRouteStopStore.h"
 
@@ -23,15 +22,10 @@
     return [self sharedStore];
 }
 
--(id)init{
+-(instancetype)init{
     self = [super init];
     if (self) {
         model = [NSManagedObjectModel mergedModelFromBundles:nil];
-//        NSPersistentStoreCoordinator *psc = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
-//        NSString *path = [self itemArchivePath];
-//        NSURL *storeURL = [NSURL fileURLWithPath:path];
-//        NSError *error = nil;
-        
         NSURL *documentsDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask]lastObject];
         NSURL *storeURL = [documentsDirectory URLByAppendingPathComponent:@"CoreData.sqlite"];
         NSError *error = nil;

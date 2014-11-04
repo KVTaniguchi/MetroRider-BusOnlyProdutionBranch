@@ -75,7 +75,6 @@
     return 100;
 }
 
-
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     if ([self.searchTextField isFirstResponder]) {
         [self.searchTextField resignFirstResponder];

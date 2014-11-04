@@ -18,7 +18,7 @@
 
 @synthesize placeMarks, placeMarkToDisplay;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
@@ -30,8 +30,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     self.tableView.dataSource = self;
     cellNib = [UINib nibWithNibName:@"KTSearchTBCell" bundle:nil];
@@ -41,15 +39,12 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
-    // Return the number of sections.
     return 1;
 }
 
@@ -57,7 +52,6 @@
 {
     return [self.placeMarks count];
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -80,7 +74,6 @@
     NSString *areaOfInterest = [NSString stringWithFormat:@"%@ ", [mark.areasOfInterest lastObject]];
     NSString *locality = [NSString stringWithFormat:@"%@ ", mark.locality];
     NSString *zipCode = [NSString stringWithFormat:@"%@ ", mark.postalCode];
-//    NSString *name = [NSString stringWithFormat:@"%@ ", mark.name];
     NSString *sublocality = [NSString stringWithFormat:@"%@ ", mark.subLocality];
     NSMutableString *cellText = [[NSMutableString alloc]initWithString:@" "];
     NSString *noText = @"(null) ";

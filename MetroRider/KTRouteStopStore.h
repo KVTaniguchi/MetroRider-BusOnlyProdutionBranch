@@ -25,19 +25,19 @@
 
 @property (nonatomic,strong) NSManagedObjectContext *context;
 +(KTRouteStopStore*)sharedStore;
--(Stop*)addNewStop;
--(Route*)addNewRouteShape;
--(UserLoc*)updateUserLoc;
+@property (nonatomic, readonly, strong) Stop *addNewStop;
+@property (nonatomic, readonly, strong) Route *addNewRouteShape;
+@property (nonatomic, readonly, strong) UserLoc *updateUserLoc;
 -(void)clearAllStopsForRoute:(NSString*)routeID;
--(BOOL)saveChanges;
--(NSString*)itemArchivePath;
+@property (nonatomic, readonly) BOOL saveChanges;
+@property (nonatomic, readonly, copy) NSString *itemArchivePath;
 -(NSArray*)fetchAllStopsForRoute:(NSString*)route;
 -(NSArray*)fetchStopsForRoute:(NSString*)routeID andDirection:(NSString*)direction;
 -(NSArray*)fetchShapeForRoute:(NSString*)route andDirection:(NSString*)direction;
--(NSArray*)allStops;
--(NSArray*)fetchFavoriteStops;
+@property (nonatomic, readonly, copy) NSArray *allStops;
+@property (nonatomic, readonly, copy) NSArray *fetchFavoriteStops;
 -(NSMutableArray*)fetchRoutesWithStopsCloseToUserLoc:(CLLocation*)userLoc;
--(UserLoc*)fetchUserLoc;
+@property (nonatomic, readonly, strong) UserLoc *fetchUserLoc;
 
 -(NSArray*)fetchAllStopsForStopID:(NSString*)stopID;
 -(BOOL)storeHasStopForRoute:(NSString *)route andStopID:(NSString *)stopID;

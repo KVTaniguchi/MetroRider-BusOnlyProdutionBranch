@@ -19,7 +19,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
     UserLoc *u = [[KTRouteStopStore sharedStore]fetchUserLoc];
-    if (self.layMapWithPlacemark == NO) {
+    if (!self.layMapWithPlacemark) {
         CLLocationCoordinate2D userCoord = CLLocationCoordinate2DMake([u.latitude doubleValue], [u.longitude doubleValue]);
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userCoord, 1.1 * METERS_PER_MILE, 1.1 * METERS_PER_MILE);
         [self.map setRegion:region animated:NO];
@@ -35,14 +35,14 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:YES];
     [self resetDistanceFlags];
-    [self resetWrongWayAlergFlags];
+    [self resetWrongWayAlertFlags];
     if (self.isViewLoaded && !self.view.window) {
         KTAppDelegate *ktAppDelegate = (KTAppDelegate*)[[UIApplication sharedApplication]delegate];
         [[ktAppDelegate window] addSubview:self.view];
     }else{
         [self checkForRestartIfFinalStopReached];
     }
-    if (self.tripMonitoringActive == NO && self.favoriteStopActive == NO) { // this is getting  called because these bools are not getting set yet
+    if (!self.tripMonitoringActive && !self.favoriteStopActive) { // this is getting  called because these bools are not getting set yet
         [self beginTripSession];
     }
     [self setUpViewForUserChoosingAStopAnnotation];
@@ -50,10 +50,10 @@
     [self.favoriteChosenContainer setAlpha:0.f];
     selectedAnnotation = [[KTAnnotationPoint alloc]init];
     self.routeLabel.text = self.route;
-    if(self.layMapWithPlacemark == YES){
+    if(self.layMapWithPlacemark){
         [self laySearchedPlacemarkAnnotation];
     }
-    if (self.favoriteStopActive == YES) {
+    if (self.favoriteStopActive) {
         [self trackFavoriteStop:_selectedStop.stopID route:_route];
         [self beginTripSession];
     }
@@ -66,7 +66,7 @@
     _oneHundredFired = NO;
 }
 
--(void)resetWrongWayAlergFlags{
+-(void)resetWrongWayAlertFlags{
     _firstWrongWayAlert = NO;
     _secondWrongWayAlert = NO;
     _thirdWrongWayAlert = NO;
@@ -129,7 +129,7 @@
         [UIView animateWithDuration:.5f animations:^{
             [_chooseAStopLabel setAlpha:1.0f];
         }];
-        if (_stopDetailViewsVisible == YES) {
+        if (_stopDetailViewsVisible) {
             [UIView animateWithDuration:1.0 animations:^{
                 [self.containerView setAlpha:0.0f];
             }];
@@ -151,16 +151,17 @@
         [self.locationManager setPausesLocationUpdatesAutomatically:YES];
         [self.locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
         self.tripMonitor = [[TripMonitor alloc]init];
+        _tripMonitor.previousDistance = [NSNumber new];
     });
 }
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     self.currentLocation = [locations lastObject];
-    if (self.tripMonitoringActive == NO) {
+    if (!self.tripMonitoringActive) {
         [self.locationManager stopUpdatingLocation];
         [self setUpMapData];
     }
-    if (self.tripMonitoringActive == YES) {
+    if (self.tripMonitoringActive) {
     [self calculateDistanceFromCurrentLocation:self.currentLocation toDestinationLoc:self.destinationLocation];
         }
 }
@@ -187,7 +188,7 @@
         ann.route = stop.route;
         ann.stopID = stop.stopID;
         ann.direction = stop.direction;
-        if (self.favoriteStopActive == YES) {
+        if (self.favoriteStopActive) {
             if ([ann.stopID isEqualToString:_selectedStop.stopID] && [ann.stopName isEqualToString:_selectedStop.stopName]) {
                 ann.isFavorite = YES;
             }
@@ -219,46 +220,39 @@
 
 -(void)calculateDistanceFromCurrentLocation:(CLLocation*)location toDestinationLoc:(CLLocation*)destLoc{
     NSInteger distanceFromDest =  [location distanceFromLocation:destLoc];
-    if (_wrongWayPossibleFlag == YES) {
-        for (Stop *stop in _stopsInWrongDirection) {
-            CLLocation *wrongStopLoc = [[CLLocation alloc]initWithLatitude:[stop.latitude doubleValue] longitude:[stop.longitude doubleValue]];
-            NSInteger distanceFromWrongStop = [location distanceFromLocation:wrongStopLoc];
-            if (distanceFromWrongStop < 50) {
-                if (_firstWrongWayAlert == NO) {
-                    [KTNotifyStop _sendWrongWayAlert];
-                }
-                if (_secondWrongWayAlert == NO) {
-                    [KTNotifyStop _sendWrongWayAlert];
-                    _secondWrongWayAlert = YES;
-                }
-                if (_thirdWrongWayAlert == NO) {
-                    [KTNotifyStop _sendWrongWayAlert];
-                    _thirdWrongWayAlert = YES;
-                }
-            }
+    NSLog(@"distance From Dest: %ld", (long)distanceFromDest);
+    NSLog(@"trip mon wrong way score: %@", _tripMonitor.wrongWayScore);
+    if (_wrongWayPossibleFlag) {
+        NSLog(@"wrong way possible checking distance");
+        [_tripMonitor checkIfUserGettingCloserToDestination:@(distanceFromDest)];
+        NSLog(@"trip monitors last distnace was: %@", _tripMonitor.previousDistance);
+        if ([_tripMonitor.wrongWayScore integerValue] > 40) {
+            [KTNotifyStop _sendWrongWayAlert];
         }
     }
-    if (distanceFromDest < 2000 && _twoKFired == NO) {
+    if (distanceFromDest < 2000 && !_twoKFired) {
         _tripSessionStops = [NSMutableArray arrayWithArray:[_tripMonitor findNextStopsTillDestinationGivenCurrentLocation:location andFinalStop:_selectedStop]];
         self.twoKFired = YES;
     }
-    if (distanceFromDest < 800 && _eightHundredFired == NO) {
+    if (distanceFromDest < 800 && !_eightHundredFired) {
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
         [self.tripMonitor checkClosestActiveStopToLocation:location withTripSessionStops:_tripSessionStops];
         _eightHundredFired = YES;
         _wrongWayPossibleFlag = NO;
     }
-    if (distanceFromDest < 350 && _threeHundredFired == NO) {
+    if (distanceFromDest < 350 && !_threeHundredFired) {
         [[UIApplication sharedApplication]cancelAllLocalNotifications];
         [KTNotifyStop _sendThreeHundredMetersLocalNotification];
         _threeHundredFired = YES;
     }
-    if (distanceFromDest < 100 && _oneHundredFired == NO) {
+    if (distanceFromDest < 100 && !_oneHundredFired) {
         [[UIApplication sharedApplication]cancelAllLocalNotifications];
         [KTNotifyStop _sendFinalStopLocalNotification];
         _oneHundredFired = YES;
         [self tripOver];
     }
+    
+    // if the array is greater than 10 objects, remove last element
 }
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
@@ -339,7 +333,7 @@
     if ([view isMemberOfClass:[KTAnnotationView class]]) {
         [view setKTAnnotationViewImageForAnnotation:annotation];
     }
-    if(self.tripMonitoringActive == YES){
+    if(self.tripMonitoringActive){
         [_locationManager stopUpdatingLocation];
     }
 }
@@ -369,6 +363,7 @@
     [self resetDistanceFlags];
     [_locationManager startUpdatingLocation];
     self.tripMonitoringActive = YES;
+    _wrongWayPossibleFlag = YES;
 //    [self.tripMonitor startMotionTracking];
     if ([stopID isEqualToString:@"0"]) {
         _selectedStop = [[KTRouteStopStore sharedStore]fetchStopForStopName:name andRoute:self.route direction:dir];
@@ -381,12 +376,6 @@
             [self initStopRegions];
         }
     }];
-    _stopsInWrongDirection = [NSArray arrayWithArray:[self.tripMonitor findStopsIntheWrongDirectionGivenCurrentLocation:self.currentLocation andFinalStop:_selectedStop]];
-    if ([_stopsInWrongDirection count] < 1) {
-        _wrongWayPossibleFlag = NO;
-    }else {
-        _wrongWayPossibleFlag = YES;
-    }
     [self.userChoseStopContainer setHidden:NO];
     chosenStopVC.stopAddressTextView.text = _selectedStop.stopName;
     chosenStopVC.route.text = self.route;
@@ -416,9 +405,8 @@
 
 -(void)chooseAnotherStop{
     [self resetDistanceFlags];
-    [self resetWrongWayAlergFlags];
-    _stopsInWrongDirection = nil;
-    if (self.tripMonitoringActive == YES) {
+    [self resetWrongWayAlertFlags];
+    if (self.tripMonitoringActive) {
         [_locationManager stopUpdatingLocation];
     }
     [UIView animateWithDuration:.5 animations:^{
@@ -502,6 +490,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [_tripMonitor resetTripMonitor];
     if ([segue.identifier isEqualToString:@"leftToRight"]) {
         [_locationManager stopMonitoringForRegion:_lastStopRegion];
         [_locationManager stopUpdatingLocation];
@@ -528,7 +517,8 @@
 
 -(void)restart{
     [self resetDistanceFlags];
-    [self resetWrongWayAlergFlags];
+    [self resetWrongWayAlertFlags];
+    _wrongWayPossibleFlag = YES;
     [_locationManager stopUpdatingLocation];
     UINavigationController *nav = [[self storyboard]instantiateViewControllerWithIdentifier:@"navController"];
     [self presentViewController:nav animated:YES completion:nil];
@@ -539,7 +529,7 @@
 
 
 - (IBAction)backButtonPressed:(id)sender {
-    if (self.startOver == NO) {
+    if (!self.startOver) {
         [self performSegueWithIdentifier:@"leftToRight" sender:self];
     }
     else{

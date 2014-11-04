@@ -11,7 +11,7 @@
 @implementation KTActiveTripStop
 @synthesize latitude, longitude, route, routeSequence, distance, stopName, direction, stopID;
 
--(id)init{
+-(instancetype)init{
     self = [super init];
     return self;
 }

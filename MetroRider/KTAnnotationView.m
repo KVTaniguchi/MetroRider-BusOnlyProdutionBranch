@@ -10,7 +10,7 @@
 
 @implementation KTAnnotationView
 @synthesize ktAnnotationViewDelegate, route, stopID, direction, stopName;
--(id)initWithAnnotation:(KTAnnotationPoint*)annotation reuseIdentifier:(NSString *)reuseIdentifier{
+-(instancetype)initWithAnnotation:(KTAnnotationPoint*)annotation reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     
     if ([annotation isKindOfClass:[KTAnnotationPoint class]]) {
