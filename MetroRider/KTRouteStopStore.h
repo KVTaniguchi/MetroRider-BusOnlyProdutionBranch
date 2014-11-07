@@ -25,9 +25,9 @@
 
 @property (nonatomic,strong) NSManagedObjectContext *context;
 +(KTRouteStopStore*)sharedStore;
-@property (nonatomic, readonly, strong) Stop *addNewStop;
-@property (nonatomic, readonly, strong) Route *addNewRouteShape;
-@property (nonatomic, readonly, strong) UserLoc *updateUserLoc;
+-(Route*)addNewRouteShape;
+-(Stop*)addNewStop;
+-(UserLoc*)updateUserLoc;
 -(void)clearAllStopsForRoute:(NSString*)routeID;
 @property (nonatomic, readonly) BOOL saveChanges;
 @property (nonatomic, readonly, copy) NSString *itemArchivePath;
